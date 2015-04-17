@@ -6,16 +6,33 @@ import android.app.Activity;
 import android.content.Intent;
 
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.GoogleAuthException;
 import com.google.android.gms.auth.GoogleAuthUtil;
+import com.google.android.gms.auth.UserRecoverableAuthException;
 import com.google.android.gms.common.AccountPicker;
 import com.google.android.gms.games.internal.api.NotificationsImpl;
 import com.google.android.gms.plus.Account;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -40,6 +57,8 @@ public class LoginActivity extends Activity {
             "https://www.googleapis.com/auth/userinfo.email";
     private final static String SCOPES = G_PLUS_SCOPE + " " + USERINFO_SCOPE + " " + EMAIL_SCOPE;
 
+    private final static String SERVER = "188.166.109.92:3000";
+
     public final static String PREF_OAUTH_PROVIDER = "OUATH_PROVIDER";
     public final static String PREF_OAUTH_ID = "OAUTH_ID";
 
@@ -49,44 +68,106 @@ public class LoginActivity extends Activity {
         Facebook
     }
 
+    public TextView progressTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+        progressTextView = (TextView) findViewById(R.id.progress_text_view);
         if (!preferences.getString(PREF_OAUTH_ID, "-1").equals("-1")) {
             OAuthProvider provider = OAuthProvider.valueOf(preferences.getString(PREF_OAUTH_PROVIDER, "-1"));
             String oauthId = preferences.getString(PREF_OAUTH_ID, "-1");
-            oAuthGetToken(provider, oauthId);
-
+            new GetTokenTask(this, oauthId, SCOPES, OAuthProvider.Google).execute();
+            progressTextView.setText("in progress");
         }
-
     }
 
 
 
-    protected void pickUserAccountGoogle() {
+    public void pickUserAccountGoogle(View v) {
         String[] accountTypes = new String[]{"com.google"};
         Intent intent = AccountPicker.newChooseAccountIntent(null, null,
                 accountTypes, false, null, null, null, null);
         startActivityForResult(intent, REQUEST_CODE_PICK_ACCOUNT_GOOGLE);
     }
 
-    protected void oAuthGetToken(OAuthProvider provider, String ouathId) {
-        switch (provider) {
-            case Google:
+
+
+    public class GetTokenTask extends AsyncTask<Void, Void, Void> {
+        Activity mActivity;
+        String mScope;
+        String mOAuthId;
+        OAuthProvider mProvider;
+
+        GetTokenTask(Activity activity, String oAuthId, String scope, OAuthProvider provider) {
+            this.mActivity = activity;
+            this.mScope = scope;
+            this.mOAuthId = oAuthId;
+            this.mProvider = provider;
+        }
+
+        /**
+         * Executes the asynchronous job. This runs when you call execute()
+         * on the AsyncTask instance.
+         */
+        @Override
+        protected Void doInBackground(Void... params) {
+            String token = oAuthFetchToken();
+            if (token != null) {
+                HttpClient httpClient = new DefaultHttpClient();
+                 HttpPost httpPost = new HttpPost("http://" + SERVER + "/session/create");
+                List<NameValuePair> nameValuePair = new ArrayList<NameValuePair>(2);
+                nameValuePair.add(new BasicNameValuePair("oauth_provider", mProvider.toString()));
+                nameValuePair.add(new BasicNameValuePair("oauth_token", mOAuthId.toString()));
+                nameValuePair.add(new BasicNameValuePair("phone", "123123123123"));
+
                 try {
-                    String token = GoogleAuthUtil.getToken(this, ouathId, SCOPES);
-                    Toast.makeText(this, token, Toast.LENGTH_LONG);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (GoogleAuthException e) {
+                    httpPost.setEntity(new UrlEncodedFormEntity(nameValuePair));
+                } catch (UnsupportedEncodingException e)
+                {
                     e.printStackTrace();
                 }
 
+                try {
+                    HttpResponse response = httpClient.execute(httpPost);
+                    // write response to log
+                    Log.d("Http Post Response:", response.toString());
+                } catch (ClientProtocolException e) {
+                    // Log exception
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    // Log exception
+                    e.printStackTrace();
+                }
 
-                break;
-            default: throw new RuntimeException(provider + " support not implemented yet");
+            }
+            return null;
+        }
+
+
+        protected String oAuthFetchToken() {
+            switch (mProvider) {
+                case Google:
+                    try {
+                        String token = GoogleAuthUtil.getToken(mActivity, mOAuthId, mScope);
+                        return token;
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (UserRecoverableAuthException e) {
+                        mActivity.startActivityForResult(
+                                e.getIntent(),
+                                REQUEST_CODE_PICK_ACCOUNT_GOOGLE);
+                    } catch (GoogleAuthException e) {
+                        e.printStackTrace();
+                    }
+
+
+                    break;
+                default: throw new RuntimeException(mProvider + " support not implemented yet");
+            }
+            return null;
         }
     }
 
@@ -99,7 +180,10 @@ public class LoginActivity extends Activity {
                 SharedPreferences preferences = getPreferences(MODE_PRIVATE);
                 preferences.edit().putString(PREF_OAUTH_PROVIDER, OAuthProvider.Google.toString())
                         .putString(PREF_OAUTH_ID, email).commit();
-                oAuthGetToken(OAuthProvider.Google, email);
+
+
+                new GetTokenTask(this, email, SCOPES, OAuthProvider.Google).execute();
+                progressTextView.setText("in progress");
                 // With the account name acquired, go get the auth token
 
             } else if (resultCode == RESULT_CANCELED) {
