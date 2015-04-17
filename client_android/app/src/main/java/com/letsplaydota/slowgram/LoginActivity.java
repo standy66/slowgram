@@ -2,10 +2,12 @@ package com.letsplaydota.slowgram;
 
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -35,7 +37,12 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        TelephonyManager tMgr = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+        String mPhoneNumber = tMgr.getLine1Number();
         phoneNumber = (EditText) findViewById(R.id.phone_number);
+        if (mPhoneNumber != null) {
+            phoneNumber.setText(mPhoneNumber);
+        }
         SharedPreferences preferences = getSharedPreferences(getString(R.string.auth_pref_name), MODE_PRIVATE);
         String token = preferences.getString(getString(R.string.pref_token), null);
         if (token != null) {
