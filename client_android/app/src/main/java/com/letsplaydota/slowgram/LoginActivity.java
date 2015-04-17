@@ -31,95 +31,95 @@ import java.util.List;
 
 public class LoginActivity extends Activity {
 
-    EditText phoneNumber;
+	EditText phoneNumber;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        TelephonyManager tMgr = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
-        String mPhoneNumber = tMgr.getLine1Number();
-        phoneNumber = (EditText) findViewById(R.id.phone_number);
-        if (mPhoneNumber != null) {
-            phoneNumber.setText(mPhoneNumber);
-        }
-        SharedPreferences preferences = getSharedPreferences(getString(R.string.auth_pref_name), MODE_PRIVATE);
-        String token = preferences.getString(getString(R.string.pref_token), null);
-        if (token != null) {
-            Intent intent = new Intent().setClass(this, MainActivity.class);
-            intent.putExtra(getString(R.string.intent_key_auth_token), token);
-            finish();
-            startActivity(intent);
-        }
-    }
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_login);
+		TelephonyManager tMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+		String mPhoneNumber = tMgr.getLine1Number();
+		phoneNumber = (EditText) findViewById(R.id.phone_number);
+		if (mPhoneNumber != null) {
+			phoneNumber.setText(mPhoneNumber);
+		}
+		SharedPreferences preferences = getSharedPreferences(getString(R.string.auth_pref_name), MODE_PRIVATE);
+		String token = preferences.getString(getString(R.string.pref_token), null);
+		if (token != null) {
+			Intent intent = new Intent().setClass(this, MainActivity.class);
+			intent.putExtra(getString(R.string.intent_key_auth_token), token);
+			finish();
+			startActivity(intent);
+		}
+	}
 
-    public void signIn(View v) {
-        String mPhone = phoneNumber.getText().toString();
-        new ServerPostAsyncTask(mPhone).execute();
-    }
+	public void signIn(View v) {
+		String mPhone = phoneNumber.getText().toString();
+		new ServerPostAsyncTask(mPhone).execute();
+	}
 
-    public class ServerPostAsyncTask extends AsyncTask<Void, Void, Void> {
+	public class ServerPostAsyncTask extends AsyncTask<Void, Void, Void> {
 
-        String mPhone;
+		String mPhone;
 
-        public ServerPostAsyncTask(String phone) {
-            this.mPhone = phone;
-        }
+		public ServerPostAsyncTask(String phone) {
+			this.mPhone = phone;
+		}
 
-        @Override
-        protected Void doInBackground(Void... params) {
-            String token = getToken();
+		@Override
+		protected Void doInBackground(Void... params) {
+			String token = getToken();
 
-            if (token != null) {
-                SharedPreferences preferences = getSharedPreferences(getString(R.string.auth_pref_name), MODE_PRIVATE);
-                preferences.edit().putString(getString(R.string.pref_token), token).commit();
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        recreate();
-                    }
-                });
-            } else {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(LoginActivity.this, "Error fetching token", Toast.LENGTH_LONG);
-                    }
-                });
-            }
-            return null;
-        }
+			if (token != null) {
+				SharedPreferences preferences = getSharedPreferences(getString(R.string.auth_pref_name), MODE_PRIVATE);
+				preferences.edit().putString(getString(R.string.pref_token), token).commit();
+				runOnUiThread(new Runnable() {
+					@Override
+					public void run() {
+						recreate();
+					}
+				});
+			} else {
+				runOnUiThread(new Runnable() {
+					@Override
+					public void run() {
+						Toast.makeText(LoginActivity.this, "Error fetching token", Toast.LENGTH_LONG);
+					}
+				});
+			}
+			return null;
+		}
 
-        protected String getToken() {
-            String url = "http://" +
-                    getString(R.string.server_ip) + ":" +
-                    getString(R.string.server_port) +
-                    getString(R.string.new_session_address);
+		protected String getToken() {
+			String url = "http://" +
+					getString(R.string.server_ip) + ":" +
+					getString(R.string.server_port) +
+					getString(R.string.new_session_address);
 
-            String phone_field = getString(R.string.new_session_phone_field);
+			String phone_field = getString(R.string.new_session_phone_field);
 
-            try {
-                HttpClient httpClient = new DefaultHttpClient();
-                HttpPost sessionPostRequest = new HttpPost(url);
-                List<NameValuePair> nameValuePairs = new ArrayList<>();
-                nameValuePairs.add(new BasicNameValuePair(phone_field, mPhone));
-                sessionPostRequest.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+			try {
+				HttpClient httpClient = new DefaultHttpClient();
+				HttpPost sessionPostRequest = new HttpPost(url);
+				List<NameValuePair> nameValuePairs = new ArrayList<>();
+				nameValuePairs.add(new BasicNameValuePair(phone_field, mPhone));
+				sessionPostRequest.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
-                HttpResponse response = httpClient.execute(sessionPostRequest);
+				HttpResponse response = httpClient.execute(sessionPostRequest);
 
-                String body = EntityUtils.toString(response.getEntity());
-                JSONObject jsonObject = new JSONObject(body);
-                String token = jsonObject.getString(getString(R.string.new_session_token_field));
-                return token;
-            } catch (ClientProtocolException clientProtocolException) {
-                clientProtocolException.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-    }
+				String body = EntityUtils.toString(response.getEntity());
+				JSONObject jsonObject = new JSONObject(body);
+				String token = jsonObject.getString(getString(R.string.new_session_token_field));
+				return token;
+			} catch (ClientProtocolException clientProtocolException) {
+				clientProtocolException.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+			return null;
+		}
+	}
 }
 

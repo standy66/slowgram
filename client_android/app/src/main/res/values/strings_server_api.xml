@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="server_ip">188.166.109.92</string>
+	<string name="server_port">3000</string>
+
+	<string name="get_users_address">/users</string>
+	<string name="new_session_address">/sessions</string>
+	<string name="new_session_phone_field">phone</string>
+	<string name="new_session_token_field">remember_token</string>
+</resources>
