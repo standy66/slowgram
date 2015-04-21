@@ -1,112 +1,125 @@
 package com.letsplaydota.slowgram;
 
-import android.accounts.AccountManager;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
-
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.GoogleAuthException;
-import com.google.android.gms.auth.GoogleAuthUtil;
-import com.google.android.gms.common.AccountPicker;
-import com.google.android.gms.games.internal.api.NotificationsImpl;
-import com.google.android.gms.plus.Account;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
-/**
- * A login screen that offers login via email/password and via Google+ sign in.
- * <p/>
- * ************ IMPORTANT SETUP NOTES: ************
- * In order for Google+ sign in to work with your app, you must first go to:
- * https://developers.google.com/+/mobile/android/getting-started#step_1_enable_the_google_api
- * and follow the steps in "Step 1" to create an OAuth 2.0 client for your package.
- */
 public class LoginActivity extends Activity {
-    //request code used by google account picker
-    protected final static int REQUEST_CODE_PICK_ACCOUNT_GOOGLE = 42;
-    protected final static int REQUEST_CODE_PICK_ACCOUNT_FACEBOOK = 43;
-    protected final static int REQUEST_CODE_PICK_ACCOUNT_VK = 43;
 
-    private final static String G_PLUS_SCOPE =
-            "oauth2:https://www.googleapis.com/auth/plus.me";
-    private final static String USERINFO_SCOPE =
-            "https://www.googleapis.com/auth/userinfo.profile";
-    private final static String EMAIL_SCOPE =
-            "https://www.googleapis.com/auth/userinfo.email";
-    private final static String SCOPES = G_PLUS_SCOPE + " " + USERINFO_SCOPE + " " + EMAIL_SCOPE;
-
-    public final static String PREF_OAUTH_PROVIDER = "OUATH_PROVIDER";
-    public final static String PREF_OAUTH_ID = "OAUTH_ID";
-
-    protected enum OAuthProvider {
-        Google,
-        VK,
-        Facebook
-    }
+    EditText phoneNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
-        if (!preferences.getString(PREF_OAUTH_ID, "-1").equals("-1")) {
-            OAuthProvider provider = OAuthProvider.valueOf(preferences.getString(PREF_OAUTH_PROVIDER, "-1"));
-            String oauthId = preferences.getString(PREF_OAUTH_ID, "-1");
-            oAuthGetToken(provider, oauthId);
-
+        TelephonyManager tMgr = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+        String mPhoneNumber = tMgr.getLine1Number();
+        phoneNumber = (EditText) findViewById(R.id.phone_number);
+        if (mPhoneNumber != null) {
+            phoneNumber.setText(mPhoneNumber);
         }
-
-    }
-
-
-
-    protected void pickUserAccountGoogle() {
-        String[] accountTypes = new String[]{"com.google"};
-        Intent intent = AccountPicker.newChooseAccountIntent(null, null,
-                accountTypes, false, null, null, null, null);
-        startActivityForResult(intent, REQUEST_CODE_PICK_ACCOUNT_GOOGLE);
-    }
-
-    protected void oAuthGetToken(OAuthProvider provider, String ouathId) {
-        switch (provider) {
-            case Google:
-                try {
-                    String token = GoogleAuthUtil.getToken(this, ouathId, SCOPES);
-                    Toast.makeText(this, token, Toast.LENGTH_LONG);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (GoogleAuthException e) {
-                    e.printStackTrace();
-                }
-
-
-                break;
-            default: throw new RuntimeException(provider + " support not implemented yet");
+        SharedPreferences preferences = getSharedPreferences(getString(R.string.auth_pref_name), MODE_PRIVATE);
+        String token = preferences.getString(getString(R.string.pref_token), null);
+        if (token != null) {
+            Intent intent = new Intent().setClass(this, MainActivity.class);
+            intent.putExtra(getString(R.string.intent_key_auth_token), token);
+            finish();
+            startActivity(intent);
         }
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == REQUEST_CODE_PICK_ACCOUNT_GOOGLE) {
-            // Receiving a result from the AccountPicker
-            if (resultCode == RESULT_OK) {
-                String email = data.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
-                SharedPreferences preferences = getPreferences(MODE_PRIVATE);
-                preferences.edit().putString(PREF_OAUTH_PROVIDER, OAuthProvider.Google.toString())
-                        .putString(PREF_OAUTH_ID, email).commit();
-                oAuthGetToken(OAuthProvider.Google, email);
-                // With the account name acquired, go get the auth token
+    public void signIn(View v) {
+        String mPhone = phoneNumber.getText().toString();
+        new ServerPostAsyncTask(mPhone).execute();
+    }
 
-            } else if (resultCode == RESULT_CANCELED) {
-                Toast.makeText(this, R.string.pick_account, Toast.LENGTH_SHORT).show();
+    public class ServerPostAsyncTask extends AsyncTask<Void, Void, Void> {
+
+        String mPhone;
+
+        public ServerPostAsyncTask(String phone) {
+            this.mPhone = phone;
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            String token = getToken();
+
+            if (token != null) {
+                SharedPreferences preferences = getSharedPreferences(getString(R.string.auth_pref_name), MODE_PRIVATE);
+                preferences.edit().putString(getString(R.string.pref_token), token).commit();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        recreate();
+                    }
+                });
+            } else {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(LoginActivity.this, "Error fetching token", Toast.LENGTH_LONG);
+                    }
+                });
             }
+            return null;
         }
 
+        protected String getToken() {
+            String url = "http://" +
+                    getString(R.string.server_ip) + ":" +
+                    getString(R.string.server_port) +
+                    getString(R.string.new_session_address);
+
+            String phone_field = getString(R.string.new_session_phone_field);
+
+            try {
+                HttpClient httpClient = new DefaultHttpClient();
+                HttpPost sessionPostRequest = new HttpPost(url);
+                List<NameValuePair> nameValuePairs = new ArrayList<>();
+                nameValuePairs.add(new BasicNameValuePair(phone_field, mPhone));
+                sessionPostRequest.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+
+                HttpResponse response = httpClient.execute(sessionPostRequest);
+
+                String body = EntityUtils.toString(response.getEntity());
+                JSONObject jsonObject = new JSONObject(body);
+                String token = jsonObject.getString(getString(R.string.new_session_token_field));
+                return token;
+            } catch (ClientProtocolException clientProtocolException) {
+                clientProtocolException.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
     }
 }
 

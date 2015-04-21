@@ -4,14 +4,21 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
+    String token;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        token = getIntent().getStringExtra(getString(R.string.intent_key_auth_token));
+        if (token == null) {
+            throw new RuntimeException("no auth token in intent extra for MainActivity");
+        }
+        Toast.makeText(this, token, Toast.LENGTH_LONG);
     }
 
     @Override
