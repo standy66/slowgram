@@ -8,6 +8,6 @@ class UsersController < ApplicationController
   private
 
     def signed_in_user
-      render json: {}, status: 401 unless signed_in?
+      head 401 unless signed_in?
     end
 end
