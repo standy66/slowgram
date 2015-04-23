@@ -9697,3 +9697,358 @@ Processing by UsersController#index as HTML
 #<ActiveRecord::Relation [#<User id: 1, name: nil, phone: "+79165730095", created_at: "2015-04-16 18:03:01", updated_at: "2015-04-17 10:41:42", remember_token: "6b9968518fb3a198ba4423b326b6194446049b0f">]>
   [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
 Completed 200 OK in 21ms (Views: 2.1ms | ActiveRecord: 0.8ms)
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1[0m  [["phone", "+79165730095"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "ad9e94266907df4bc1be15c39206acfebf6bc72c"], ["updated_at", "2015-04-23 19:45:43.280986"], ["id", 1]]
+  [1m[35m (16.1ms)[0m  commit transaction
+Completed 201 Created in 57ms (Views: 0.6ms | ActiveRecord: 19.2ms)
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1[0m  [["phone", "+79165730095"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "430103ae1a156f4839e8a4a4ce7137c122efc156"], ["updated_at", "2015-04-23 19:45:43.312794"], ["id", 1]]
+  [1m[35m (15.4ms)[0m  commit transaction
+Completed 201 Created in 22ms (Views: 0.3ms | ActiveRecord: 15.9ms)
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1[0m  [["phone", "+79165730095"]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "df691a430f050b3da18980452c90438590763ca9"], ["updated_at", "2015-04-23 19:45:43.340856"], ["id", 1]]
+  [1m[35m (15.1ms)[0m  commit transaction
+Completed 201 Created in 22ms (Views: 0.4ms | ActiveRecord: 15.8ms)
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1[0m  [["phone", "+79165730095"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "19574a2f316101f8d9bc20c2744f98dad59e2c62"], ["updated_at", "2015-04-23 19:49:13.675243"], ["id", 1]]
+  [1m[35m (18.0ms)[0m  commit transaction
+Completed 201 Created in 57ms (Views: 0.4ms | ActiveRecord: 21.0ms)
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1[0m  [["phone", "+79165730095"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "c353e82759b8ddd435d0181e9d67085131b5cbca"], ["updated_at", "2015-04-23 19:49:13.704406"], ["id", 1]]
+  [1m[35m (17.0ms)[0m  commit transaction
+Completed 201 Created in 22ms (Views: 0.3ms | ActiveRecord: 17.4ms)
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1[0m  [["phone", "+79165730095"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "7e46e4cfb2a140252c271dea56cd8b23fd880a98"], ["updated_at", "2015-04-23 19:49:13.731578"], ["id", 1]]
+  [1m[35m (16.5ms)[0m  commit transaction
+Completed 201 Created in 22ms (Views: 0.3ms | ActiveRecord: 17.0ms)
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1[0m  [["phone", "+79165730095"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "a7c13ea1e1e3712740a0d473eec13472fb4184a1"], ["updated_at", "2015-04-23 19:49:44.886479"], ["id", 1]]
+  [1m[35m (15.2ms)[0m  commit transaction
+Completed 201 Created in 60ms (Views: 0.4ms | ActiveRecord: 18.1ms)
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1[0m  [["phone", "+79165730095"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "10f7bca37ee2789c475779d286c781dce41bd224"], ["updated_at", "2015-04-23 19:49:44.912746"], ["id", 1]]
+  [1m[35m (14.5ms)[0m  commit transaction
+Completed 201 Created in 20ms (Views: 0.3ms | ActiveRecord: 15.0ms)
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1[0m  [["phone", "+79165730095"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "eb2be480e8eeb988b19fe1f5da194989f5a55ff6"], ["updated_at", "2015-04-23 19:49:44.937466"], ["id", 1]]
+  [1m[35m (15.7ms)[0m  commit transaction
+Completed 201 Created in 21ms (Views: 0.3ms | ActiveRecord: 16.2ms)
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1[0m  [["phone", "+79165730095"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "ea628e63671f9548e4743719815b961bbdbaf277"], ["updated_at", "2015-04-23 19:50:21.437095"], ["id", 1]]
+  [1m[35m (7.5ms)[0m  commit transaction
+Completed 201 Created in 46ms (Views: 0.6ms | ActiveRecord: 10.4ms)
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1[0m  [["phone", "+79165730095"]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "56becfe7b1e7fd1c6905d2e4dcac93fdca5d64d5"], ["updated_at", "2015-04-23 19:50:21.458789"], ["id", 1]]
+  [1m[35m (7.1ms)[0m  commit transaction
+Completed 201 Created in 14ms (Views: 0.3ms | ActiveRecord: 7.7ms)
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1[0m  [["phone", "+79165730095"]]
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "9e7eb0e921e736b03e6bbd81f2e13cfcfb6ee267"], ["updated_at", "2015-04-23 19:50:21.478847"], ["id", 1]]
+  [1m[35m (8.6ms)[0m  commit transaction
+Completed 201 Created in 17ms (Views: 0.5ms | ActiveRecord: 9.4ms)
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1[0m  [["phone", "+79165730095"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "37d2a2c786b46be7b52f2d092aee6d454c925235"], ["updated_at", "2015-04-23 19:51:41.735686"], ["id", 1]]
+  [1m[35m (15.7ms)[0m  commit transaction
+Completed 201 Created in 54ms (Views: 0.4ms | ActiveRecord: 18.6ms)
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1[0m  [["phone", "+79165730095"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "5f5c02a848e78737fe42b9ae29844bd7f998e51b"], ["updated_at", "2015-04-23 19:51:41.762220"], ["id", 1]]
+  [1m[35m (14.3ms)[0m  commit transaction
+Completed 201 Created in 20ms (Views: 0.5ms | ActiveRecord: 14.7ms)
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1[0m  [["phone", "+79165730095"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "16a211bcdbde2ff619fd626cfa7458e19315310b"], ["updated_at", "2015-04-23 19:51:41.790147"], ["id", 1]]
+  [1m[35m (14.1ms)[0m  commit transaction
+Completed 201 Created in 20ms (Views: 0.6ms | ActiveRecord: 14.6ms)
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1[0m  [["phone", "+79165730095"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "109b88e646aa00adc07c96a7bc0c31ae57b1e23f"], ["updated_at", "2015-04-23 20:01:54.234329"], ["id", 1]]
+  [1m[35m (8.8ms)[0m  commit transaction
+Completed 201 Created in 49ms (Views: 0.4ms | ActiveRecord: 12.0ms)
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1[0m  [["phone", "+79165730095"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "172f2af9b24fb285bb488796edad1fa5911e00bf"], ["updated_at", "2015-04-23 20:01:54.254784"], ["id", 1]]
+  [1m[35m (7.0ms)[0m  commit transaction
+Completed 201 Created in 13ms (Views: 0.4ms | ActiveRecord: 7.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (37.3ms)[0m  [1mCREATE TABLE "contact_relations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "contact_id" integer) [0m
+  [1m[35m (17.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "phone" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "remember_token" varchar) 
+  [1m[36m (17.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (18.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (17.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150421095958')[0m
+  [1m[35m (17.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150421095020')
+  [1m[36m (14.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150410124620')[0m
+  [1m[35m (17.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150416161223')
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1  [["phone", "+79165730095"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("phone", "created_at", "updated_at", "remember_token") VALUES (?, ?, ?, ?)  [["phone", "+79165730095"], ["created_at", "2015-04-23 20:02:57.974446"], ["updated_at", "2015-04-23 20:02:57.974446"], ["remember_token", "df5435c76156f4b26195634fd30153a67ce7a1c7"]]
+  [1m[36m (18.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "ae00a150aa19ba5adbe3390b542f320a95857b78"], ["updated_at", "2015-04-23 20:02:57.997062"], ["id", 1]]
+  [1m[35m (17.9ms)[0m  commit transaction
+Completed 201 Created in 71ms (Views: 0.5ms | ActiveRecord: 37.8ms)
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1[0m  [["phone", "+79165730095"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "8f7c88918bc475586b721534ec81292819f6efc3"], ["updated_at", "2015-04-23 20:02:58.026935"], ["id", 1]]
+  [1m[35m (17.0ms)[0m  commit transaction
+Completed 201 Created in 23ms (Views: 0.3ms | ActiveRecord: 17.5ms)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1  [["phone", "+79165730095"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["remember_token", "2af8ec60f56e77b84602728c0f8bf5ef3f3d4935"], ["updated_at", "2015-04-23 20:03:32.233899"], ["id", 1]]
+  [1m[36m (8.0ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 38ms (Views: 0.4ms | ActiveRecord: 9.4ms)
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1  [["phone", "+79165730095"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["remember_token", "acd2d5902d2e7135c66836d453ebfb86a8e6a3bc"], ["updated_at", "2015-04-23 20:03:32.255609"], ["id", 1]]
+  [1m[36m (8.6ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 17ms (Views: 0.3ms | ActiveRecord: 9.2ms)
+  [1m[35m (0.2ms)[0m  begin transaction
+Started POST "/login" for 127.0.0.1 at 2015-04-23 23:03:32 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1[0m  [["phone", "+79165730095"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "ab315b9686ffcce4fd12a4eb43989208a72e6c99"], ["updated_at", "2015-04-23 20:03:32.303167"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 201 Created in 20ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+Started GET "/users?remember_token=P7MsWtslMQzoWqcL5b7gQQ%3D%3D" for 127.0.0.1 at 2015-04-23 23:03:32 +0300
+Processing by UsersController#index as HTML
+  Parameters: {"remember_token"=>"P7MsWtslMQzoWqcL5b7gQQ=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "ab315b9686ffcce4fd12a4eb43989208a72e6c99"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+#<ActiveRecord::Relation [#<User id: 1, name: nil, phone: "+79165730095", created_at: "2015-04-23 20:02:57", updated_at: "2015-04-23 20:03:32", remember_token: "ab315b9686ffcce4fd12a4eb43989208a72e6c99">]>
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+#<ActiveRecord::Relation [#<User id: 1, name: nil, phone: "+79165730095", created_at: "2015-04-23 20:02:57", updated_at: "2015-04-23 20:03:32", remember_token: "ab315b9686ffcce4fd12a4eb43989208a72e6c99">]>
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "contact_relations" ON "users"."id" = "contact_relations"."contact_id" WHERE "contact_relations"."user_id" = ?  [["user_id", 1]]
+Completed 200 OK in 35ms (Views: 8.0ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1  [["phone", "+79165730095"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["remember_token", "fc506f510a7bafea9fae5d443176a3f26ff52f51"], ["updated_at", "2015-04-23 20:05:45.124651"], ["id", 1]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 39ms (Views: 0.4ms | ActiveRecord: 10.3ms)
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1  [["phone", "+79165730095"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["remember_token", "2028d368d6b482da5a4ebaf4b9782182738adfa1"], ["updated_at", "2015-04-23 20:05:45.144902"], ["id", 1]]
+  [1m[36m (8.1ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 14ms (Views: 0.3ms | ActiveRecord: 8.8ms)
+  [1m[35m (0.1ms)[0m  begin transaction
+Started POST "/login" for 127.0.0.1 at 2015-04-23 23:05:45 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1[0m  [["phone", "+79165730095"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "90a49fa42dfcbc2e160b5cc0f84ca51d1dbe6518"], ["updated_at", "2015-04-23 20:05:45.189134"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 201 Created in 20ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+Started GET "/users?remember_token=h7dC7k6vNLjk7q8YS7FBqg%3D%3D" for 127.0.0.1 at 2015-04-23 23:05:45 +0300
+Processing by UsersController#index as HTML
+  Parameters: {"remember_token"=>"h7dC7k6vNLjk7q8YS7FBqg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "90a49fa42dfcbc2e160b5cc0f84ca51d1dbe6518"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+#<ActiveRecord::Relation [#<User id: 1, name: nil, phone: "+79165730095", created_at: "2015-04-23 20:02:57", updated_at: "2015-04-23 20:05:45", remember_token: "90a49fa42dfcbc2e160b5cc0f84ca51d1dbe6518">]>
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+#<ActiveRecord::Relation [#<User id: 1, name: nil, phone: "+79165730095", created_at: "2015-04-23 20:02:57", updated_at: "2015-04-23 20:05:45", remember_token: "90a49fa42dfcbc2e160b5cc0f84ca51d1dbe6518">]>
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "contact_relations" ON "users"."id" = "contact_relations"."contact_id" WHERE "contact_relations"."user_id" = ?  [["user_id", 1]]
+Completed 200 OK in 35ms (Views: 8.1ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1  [["phone", "+79165730095"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["remember_token", "5bba307cf76a3566baf05d382857bc74ed616e90"], ["updated_at", "2015-04-23 20:06:27.880764"], ["id", 1]]
+  [1m[36m (7.6ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 37ms (Views: 0.4ms | ActiveRecord: 9.0ms)
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1  [["phone", "+79165730095"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["remember_token", "1c89f1523377b691769bf595cd0c8ecafdf8942a"], ["updated_at", "2015-04-23 20:06:27.899637"], ["id", 1]]
+  [1m[36m (8.8ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 15ms (Views: 0.5ms | ActiveRecord: 9.3ms)
+  [1m[35m (0.1ms)[0m  begin transaction
+Started POST "/login" for 127.0.0.1 at 2015-04-23 23:06:27 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1[0m  [["phone", "+79165730095"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "79c09a09bf52fff7df62a8b0a65455cfea7f1476"], ["updated_at", "2015-04-23 20:06:27.944098"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 201 Created in 20ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+Started GET "/users?remember_token=O-o5UXXujJCL2bRRJvKfpQ%3D%3D" for 127.0.0.1 at 2015-04-23 23:06:27 +0300
+Processing by UsersController#index as HTML
+  Parameters: {"remember_token"=>"O-o5UXXujJCL2bRRJvKfpQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "79c09a09bf52fff7df62a8b0a65455cfea7f1476"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+#<ActiveRecord::Relation [#<User id: 1, name: nil, phone: "+79165730095", created_at: "2015-04-23 20:02:57", updated_at: "2015-04-23 20:06:27", remember_token: "79c09a09bf52fff7df62a8b0a65455cfea7f1476">]>
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+#<ActiveRecord::Relation [#<User id: 1, name: nil, phone: "+79165730095", created_at: "2015-04-23 20:02:57", updated_at: "2015-04-23 20:06:27", remember_token: "79c09a09bf52fff7df62a8b0a65455cfea7f1476">]>
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "contact_relations" ON "users"."id" = "contact_relations"."contact_id" WHERE "contact_relations"."user_id" = ?  [["user_id", 1]]
+Completed 200 OK in 39ms (Views: 8.0ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1  [["phone", "+79165730095"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["remember_token", "ab07e45c3239e604f1f36f6cd0e182a7e3b29813"], ["updated_at", "2015-04-23 22:58:10.953446"], ["id", 1]]
+  [1m[36m (12.0ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 47ms (Views: 0.5ms | ActiveRecord: 13.7ms)
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1  [["phone", "+79165730095"]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["remember_token", "83646a6f8dd74266a167ed183329de7c86285064"], ["updated_at", "2015-04-23 22:58:10.982336"], ["id", 1]]
+  [1m[36m (9.7ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 20ms (Views: 0.5ms | ActiveRecord: 10.6ms)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started POST "/login" for 127.0.0.1 at 2015-04-24 01:58:11 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"phone"=>"79165730095"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1[0m  [["phone", "+79165730095"]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "67105baf8a68e040c41da98249c3c0f130eaf5f0"], ["updated_at", "2015-04-23 22:58:11.046416"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 201 Created in 27ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+Started GET "/users?remember_token=4XgAF6JQnMTbYJ6qamJmOw%3D%3D" for 127.0.0.1 at 2015-04-24 01:58:11 +0300
+Processing by UsersController#index as HTML
+  Parameters: {"remember_token"=>"4XgAF6JQnMTbYJ6qamJmOw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "67105baf8a68e040c41da98249c3c0f130eaf5f0"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+#<ActiveRecord::Relation [#<User id: 1, name: nil, phone: "+79165730095", created_at: "2015-04-23 20:02:57", updated_at: "2015-04-23 22:58:11", remember_token: "67105baf8a68e040c41da98249c3c0f130eaf5f0">]>
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+#<ActiveRecord::Relation [#<User id: 1, name: nil, phone: "+79165730095", created_at: "2015-04-23 20:02:57", updated_at: "2015-04-23 22:58:11", remember_token: "67105baf8a68e040c41da98249c3c0f130eaf5f0">]>
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "contact_relations" ON "users"."id" = "contact_relations"."contact_id" WHERE "contact_relations"."user_id" = ?  [["user_id", 1]]
+Completed 200 OK in 54ms (Views: 9.0ms | ActiveRecord: 1.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("phone", "created_at", "updated_at", "remember_token") VALUES (?, ?, ?, ?)  [["phone", "+79165730095"], ["created_at", "2015-04-23 23:02:21.853471"], ["updated_at", "2015-04-23 23:02:21.853471"], ["remember_token", "37a048fa648b7456fafbbc982f0867c38313b596"]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("phone", "created_at", "updated_at", "remember_token") VALUES (?, ?, ?, ?)  [["phone", "+79165730095"], ["created_at", "2015-04-23 23:03:46.126137"], ["updated_at", "2015-04-23 23:03:46.126137"], ["remember_token", "b3a56778a2c09de1e7c664914e04ed742acc62b1"]]
+  [1m[36m (14.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("phone", "created_at", "updated_at", "remember_token") VALUES (?, ?, ?, ?)[0m  [["phone", "+79152004797"], ["created_at", "2015-04-23 23:03:46.159552"], ["updated_at", "2015-04-23 23:03:46.159552"], ["remember_token", "094a4b8b8e50bef83241362c222f69f7ba3a6fd5"]]
+  [1m[35m (15.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("phone", "created_at", "updated_at", "remember_token") VALUES (?, ?, ?, ?)  [["phone", "+79165730095"], ["created_at", "2015-04-23 23:05:00.818729"], ["updated_at", "2015-04-23 23:05:00.818729"], ["remember_token", "a25817081748f8a4d9e2516901cc10ff733f91cd"]]
+  [1m[36m (9.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("phone", "created_at", "updated_at", "remember_token") VALUES (?, ?, ?, ?)[0m  [["phone", "+79152004797"], ["created_at", "2015-04-23 23:05:00.847064"], ["updated_at", "2015-04-23 23:05:00.847064"], ["remember_token", "62fd4748835260ae1653779cff28939ac336ef58"]]
+  [1m[35m (8.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("phone", "created_at", "updated_at", "remember_token") VALUES (?, ?, ?, ?)  [["phone", "+79165730095"], ["created_at", "2015-04-23 23:05:45.533319"], ["updated_at", "2015-04-23 23:05:45.533319"], ["remember_token", "3edf1f57a234de69ae2ce4d99fd27b5c8a5574ae"]]
+  [1m[36m (8.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("phone", "created_at", "updated_at", "remember_token") VALUES (?, ?, ?, ?)[0m  [["phone", "+79152004797"], ["created_at", "2015-04-23 23:05:45.558433"], ["updated_at", "2015-04-23 23:05:45.558433"], ["remember_token", "0c84e36a8e09d68ca40ac434d17645596048c15d"]]
+  [1m[35m (8.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("phone", "created_at", "updated_at", "remember_token") VALUES (?, ?, ?, ?)  [["phone", "+79165730095"], ["created_at", "2015-04-23 23:06:51.776638"], ["updated_at", "2015-04-23 23:06:51.776638"], ["remember_token", "2b3fd541ef104709e4ced58b46bff55bafcf8630"]]
+  [1m[36m (9.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("phone", "created_at", "updated_at", "remember_token") VALUES (?, ?, ?, ?)[0m  [["phone", "+79152004797"], ["created_at", "2015-04-23 23:06:51.803433"], ["updated_at", "2015-04-23 23:06:51.803433"], ["remember_token", "aab423b77dc46c19fb832888d5feea30923dfccb"]]
+  [1m[35m (8.6ms)[0m  commit transaction
+Processing by UsersController#update as HTML
+  Parameters: {"new_contacts"=>["10"], "id"=>"9"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "contact_relations" ("contact_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["contact_id", 10], ["user_id", 9], ["created_at", "2015-04-23 23:06:51.857445"], ["updated_at", "2015-04-23 23:06:51.857445"]]
+  [1m[35m (8.2ms)[0m  commit transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "contact_relations" ON "users"."id" = "contact_relations"."contact_id" WHERE "contact_relations"."user_id" = ?[0m  [["user_id", 9]]
+Completed 200 OK in 68ms (Views: 9.4ms | ActiveRecord: 9.5ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "contact_relations" ON "users"."id" = "contact_relations"."contact_id" WHERE "contact_relations"."user_id" = ?  [["user_id", 9]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("phone", "created_at", "updated_at", "remember_token") VALUES (?, ?, ?, ?)  [["phone", "+79165730095"], ["created_at", "2015-04-23 23:16:05.833032"], ["updated_at", "2015-04-23 23:16:05.833032"], ["remember_token", "2a80085b33e06aa02fee47e7a40f6828f4ef59c3"]]
+  [1m[36m (1141.4ms)[0m  [1mcommit transaction[0m
+Processing by UsersController#update as HTML
+  Parameters: {"new_phones"=>["+79152004797"], "id"=>"11"}
+Completed 500 Internal Server Error in 1ms
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("phone", "created_at", "updated_at", "remember_token") VALUES (?, ?, ?, ?)  [["phone", "+79165730095"], ["created_at", "2015-04-23 23:16:31.616035"], ["updated_at", "2015-04-23 23:16:31.616035"], ["remember_token", "86f663fa325235fe26d4f3ffe889d0592d97258c"]]
+  [1m[36m (17.7ms)[0m  [1mcommit transaction[0m
+Processing by UsersController#update as HTML
+  Parameters: {"phones"=>["+79152004797"], "id"=>"12"}
+Completed 500 Internal Server Error in 1ms
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("phone", "created_at", "updated_at", "remember_token") VALUES (?, ?, ?, ?)  [["phone", "+79165730095"], ["created_at", "2015-04-23 23:17:12.302651"], ["updated_at", "2015-04-23 23:17:12.302651"], ["remember_token", "ccd6fa740506c7eb426432e60d090928847f1854"]]
+  [1m[36m (22.2ms)[0m  [1mcommit transaction[0m
+Processing by UsersController#update as HTML
+  Parameters: {"phones"=>["+79152004797"], "id"=>"13"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."phone" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["phone", "+79152004797"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "contact_relations" ("contact_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["contact_id", 4], ["user_id", 13], ["created_at", "2015-04-23 23:17:12.383424"], ["updated_at", "2015-04-23 23:17:12.383424"]]
+  [1m[36m (17.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "contact_relations" ON "users"."id" = "contact_relations"."contact_id" WHERE "contact_relations"."user_id" = ?  [["user_id", 13]]
+Completed 200 OK in 78ms (Views: 10.2ms | ActiveRecord: 19.1ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "contact_relations" ON "users"."id" = "contact_relations"."contact_id" WHERE "contact_relations"."user_id" = ?[0m  [["user_id", 13]]

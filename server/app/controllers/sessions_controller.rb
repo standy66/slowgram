@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       sign_in user
       render json: { remember_token: @remember_token }, status: 201
     else
-      head 403
+      render json: { errors: user.errors.full_messages }, status: 403
     end
   end
 
