@@ -70,6 +70,11 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
     private final String CREATE_DIALOG_TOKEN_FIELD = "token";
     private final String CREATE_DIALOG_PHONE_NUMBERS_FIELD = "phone_numbers";
     private final String CREATE_DIALOG_DIALOG_ID = "dialogID";
+    private final String SEND_MESSAGE_ADDRESS = "/send_message";
+    private final String SEND_MESSAGE_TOKEN_FIELD = "token";
+    private final String SEND_MESSAGE_DIALOG_ID_FIELD = "dialogID";
+    private final String SEND_MESSAGE_CAPTION_FIELD = "caption";
+    private final String SEND_MESSAGE_TEXT_FIELD = "text";
 
 
 
@@ -152,6 +157,12 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
         try {
             sessionPostAddContact.setEntity(new UrlEncodedFormEntity(nameValuePairs));
         } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            HttpResponse response = httpClient.execute(sessionPostAddContact);
+        } catch (IOException e) {
             e.printStackTrace();
         }
         /*
@@ -244,9 +255,25 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
 
 	@Override
 	public void sendMessage(String token, String dialogId, String caption, String text) throws BadTokenException, BadDialogId {
+        HttpClient httpClient = new DefaultHttpClient();
+        HttpPost sessionPostSendMessage = new HttpPost(remoteAddress + SEND_MESSAGE_ADDRESS);
+        List<NameValuePair> nameValuePairs = new ArrayList<>();
+        nameValuePairs.add(new BasicNameValuePair(SEND_MESSAGE_TOKEN_FIELD, token));
+        nameValuePairs.add(new BasicNameValuePair(SEND_MESSAGE_DIALOG_ID_FIELD, dialogId));
+        nameValuePairs.add(new BasicNameValuePair(SEND_MESSAGE_CAPTION_FIELD, caption));
+        nameValuePairs.add(new BasicNameValuePair(SEND_MESSAGE_TEXT_FIELD, text));
+        try {
+            sessionPostSendMessage.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
 
-
-	}
+        try {
+            HttpResponse response = httpClient.execute(sessionPostSendMessage);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 	@Override
 	public List<Message> getMessages(String token, String dialogId, int from, int to) throws BadTokenException, BadDialogId {
