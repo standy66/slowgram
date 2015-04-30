@@ -75,6 +75,13 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
     private final String SEND_MESSAGE_DIALOG_ID_FIELD = "dialogID";
     private final String SEND_MESSAGE_CAPTION_FIELD = "caption";
     private final String SEND_MESSAGE_TEXT_FIELD = "text";
+    private final String GET_MESSAGE_ADDRESS = "/get_message";
+    private final String GET_MESSAGE_TOKEN_FIELD = "token";
+    private final String GET_MESSAGE_DIALOG_ID_FIELD = "dialogID";
+    private final String GET_MESSAGE_FROM_FIELD = "from";
+    private final String GET_MESSAGE_TO_FIELD = "to";
+    private final String GET_MESSAGE_RETURNED_MESSAGES = "messages";
+
 
 
 
@@ -277,6 +284,44 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
 
 	@Override
 	public List<Message> getMessages(String token, String dialogId, int from, int to) throws BadTokenException, BadDialogId {
-		return null;
+        HttpClient httpClient = new DefaultHttpClient();
+        HttpPost sessionPostGetMessage = new HttpPost(remoteAddress + GET_MESSAGE_ADDRESS);
+        List<NameValuePair> nameValuePairs = new ArrayList<>();
+        nameValuePairs.add(new BasicNameValuePair(GET_MESSAGE_TOKEN_FIELD, token));
+        nameValuePairs.add(new BasicNameValuePair(GET_MESSAGE_DIALOG_ID_FIELD, dialogId));
+        nameValuePairs.add(new BasicNameValuePair(GET_MESSAGE_FROM_FIELD, String.valueOf(from)));
+        nameValuePairs.add(new BasicNameValuePair(GET_MESSAGE_TO_FIELD, String.valueOf(to)));
+        try {
+            sessionPostGetMessage.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+        HttpResponse response = null;
+        try {
+            response = httpClient.execute(sessionPostGetMessage);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        String body = null;
+        try {
+            body = EntityUtils.toString(response.getEntity());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = new JSONObject(body);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        List<Message> messages  = null;
+        try {
+            messages = (List<Message>) jsonObject.get(GET_MESSAGE_RETURNED_MESSAGES);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return messages;
 	}
 }
