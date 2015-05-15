@@ -1,6 +1,5 @@
 package com.letsplaydota.slowgram.models;
 
-import com.letsplaydota.slowgram.R;
 import com.letsplaydota.slowgram.models.exceptions.BadConfirmationCodeException;
 import com.letsplaydota.slowgram.models.exceptions.BadDialogId;
 import com.letsplaydota.slowgram.models.exceptions.BadPhoneNumberException;
@@ -32,29 +31,29 @@ import java.util.List;
  */
 
 enum HttpRequestType {
-	GET,
-	POST,
-	DELETE,
-	UPDATE
+    GET,
+    POST,
+    DELETE,
+    UPDATE
 };
 
 public class RemoteMessagingServiceProvider implements MessagingServiceProvider {
 
-	private String remoteAddress;
+    private String remoteAddress;
 
-	public RemoteMessagingServiceProvider(String ip, int port) {
-		remoteAddress = "http://" + ip + ":" + port;
-	}
+    public RemoteMessagingServiceProvider(String ip, int port) {
+        remoteAddress = "http://" + ip + ":" + port;
+    }
 
-	@Override
-	public String authorize(String phoneNumber, String code, String deviceId) throws BadPhoneNumberException, BadConfirmationCodeException, ServerUnavailableException {
-		return null;
-	}
+    @Override
+    public String authorize(String phoneNumber, String code, String deviceId) throws BadPhoneNumberException, BadConfirmationCodeException, ServerUnavailableException {
+        return null;
+    }
 
-	private final String REQUEST_CODE_ADDRESS = "/request_code";
-	private final String REQUEST_CODE_PHONE_FILED = "phone";
-	private final String REQUEST_CODE_DEVICE_ID_FIELD = "device_id";
-	private final String REQUEST_CODE_TOKEN_FIELD = "remember_token";
+    private final String REQUEST_CODE_ADDRESS = "/request_code";
+    private final String REQUEST_CODE_PHONE_FILED = "phone";
+    private final String REQUEST_CODE_DEVICE_ID_FIELD = "device_id";
+    private final String REQUEST_CODE_TOKEN_FIELD = "remember_token";
     private final String GET_CONTACT_LIST_ADDRESS = "/get_contact_list";
     private final String GET_CONTACT_LIST_TOKEN_FIELD = "token";
     private final String GET_CONTACT_LIST_NAME_OF_RETURN_ARRAY = "contacts";
@@ -87,34 +86,34 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
 
     private final HttpRequestType REQUEST_CODE_HTTP_REQUEST_TYPE = HttpRequestType.POST;
 
-	@Override
-	public void requestConfirmationCode(String phoneNumber, String deviceId) throws BadPhoneNumberException, ServerUnavailableException {
-		try {
-			HttpClient httpClient = new DefaultHttpClient();
-			HttpPost sessionPostRequest = new HttpPost(remoteAddress + REQUEST_CODE_ADDRESS);
-			List<NameValuePair> nameValuePairs = new ArrayList<>();
-			nameValuePairs.add(new BasicNameValuePair(REQUEST_CODE_PHONE_FILED, phoneNumber));
-			nameValuePairs.add(new BasicNameValuePair(REQUEST_CODE_DEVICE_ID_FIELD, deviceId));
-			sessionPostRequest.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+    @Override
+    public void requestConfirmationCode(String phoneNumber, String deviceId) throws BadPhoneNumberException, ServerUnavailableException {
+        try {
+            HttpClient httpClient = new DefaultHttpClient();
+            HttpPost sessionPostRequest = new HttpPost(remoteAddress + REQUEST_CODE_ADDRESS);
+            List<NameValuePair> nameValuePairs = new ArrayList<>();
+            nameValuePairs.add(new BasicNameValuePair(REQUEST_CODE_PHONE_FILED, phoneNumber));
+            nameValuePairs.add(new BasicNameValuePair(REQUEST_CODE_DEVICE_ID_FIELD, deviceId));
+            sessionPostRequest.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
-			HttpResponse response = httpClient.execute(sessionPostRequest);
+            HttpResponse response = httpClient.execute(sessionPostRequest);
 
-			String body = EntityUtils.toString(response.getEntity());
-			JSONObject jsonObject = new JSONObject(body);
-			String token = jsonObject.getString(REQUEST_CODE_TOKEN_FIELD);
-		} catch (JSONException e) {
-			e.printStackTrace();
-		} catch (ClientProtocolException e) {
-			e.printStackTrace();
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+            String body = EntityUtils.toString(response.getEntity());
+            JSONObject jsonObject = new JSONObject(body);
+            String token = jsonObject.getString(REQUEST_CODE_TOKEN_FIELD);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-	@Override
-	public Collection<Contact> getContactList(String token) throws BadTokenException {
+    @Override
+    public Collection<Contact> getContactList(String token) throws BadTokenException {
 
         HttpClient httpClient = new DefaultHttpClient();
         HttpPost sessionPostGetContactList = new HttpPost(remoteAddress + GET_CONTACT_LIST_ADDRESS);
@@ -152,10 +151,10 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
             e.printStackTrace();
         }
         return contacts;
-	}
+    }
 
-	@Override
-	public void addContactToContactList(String token, String contactPhoneNumber) throws ContactNotRegisteredException, BadTokenException {
+    @Override
+    public void addContactToContactList(String token, String contactPhoneNumber) throws ContactNotRegisteredException, BadTokenException {
         HttpClient httpClient = new DefaultHttpClient();
         HttpPost sessionPostAddContact = new HttpPost(remoteAddress + ADD_CONTACT_TO_CONTACT_LIST_ADDRESS);
         List<NameValuePair> nameValuePairs = new ArrayList<>();
@@ -175,10 +174,10 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
         /*
          * Кажется, это всё, нам не надо ничего от сервера получать
          */
-	}
+    }
 
-	@Override
-	public List<Dialog> getDialogs(String token, int from, int to) throws BadTokenException {
+    @Override
+    public List<Dialog> getDialogs(String token, int from, int to) throws BadTokenException {
         HttpClient httpClient = new DefaultHttpClient();
         HttpPost sessionGetDialogs = new HttpPost(remoteAddress + GET_DIALOG_ADDRESS);
         List<NameValuePair> nameValuePairs = new ArrayList<>();
@@ -217,15 +216,15 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
             e.printStackTrace();
         }
         return dialogs;
-	}
+    }
 
-	@Override
-	public String createDialog(String token, Collection<String> phoneNumbers) throws BadTokenException, BadPhoneNumberException {
+    @Override
+    public String createDialog(String token, Collection<String> phoneNumbers) throws BadTokenException, BadPhoneNumberException {
         HttpClient httpClient = new DefaultHttpClient();
         HttpPost sessionPostCreateDialog = new HttpPost(remoteAddress + CREATE_DIALOG_ADDRESS);
         List<NameValuePair> nameValuePairs = new ArrayList<>();
         nameValuePairs.add(new BasicNameValuePair(CREATE_DIALOG_TOKEN_FIELD, token));
-        nameValuePairs.add(new BasicNameValuePair(CREATE_DIALOG_PHONE_NUMBERS_FIELD, new Gson().toJson(phoneNumbers)));
+        nameValuePairs.add(new BasicNameValuePair(CREATE_DIALOG_PHONE_NUMBERS_FIELD, new JSONArray(phoneNumbers).toString()));
         try {
             sessionPostCreateDialog.setEntity(new UrlEncodedFormEntity(nameValuePairs));
         } catch (UnsupportedEncodingException e) {
@@ -258,10 +257,10 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
             e.printStackTrace();
         }
         return dialogID;
-	}
+    }
 
-	@Override
-	public void sendMessage(String token, String dialogId, String caption, String text) throws BadTokenException, BadDialogId {
+    @Override
+    public void sendMessage(String token, String dialogId, String caption, String text) throws BadTokenException, BadDialogId {
         HttpClient httpClient = new DefaultHttpClient();
         HttpPost sessionPostSendMessage = new HttpPost(remoteAddress + SEND_MESSAGE_ADDRESS);
         List<NameValuePair> nameValuePairs = new ArrayList<>();
@@ -282,8 +281,8 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
         }
     }
 
-	@Override
-	public List<Message> getMessages(String token, String dialogId, int from, int to) throws BadTokenException, BadDialogId {
+    @Override
+    public List<Message> getMessages(String token, String dialogId, int from, int to) throws BadTokenException, BadDialogId {
         HttpClient httpClient = new DefaultHttpClient();
         HttpPost sessionPostGetMessage = new HttpPost(remoteAddress + GET_MESSAGE_ADDRESS);
         List<NameValuePair> nameValuePairs = new ArrayList<>();
@@ -323,5 +322,5 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
             e.printStackTrace();
         }
         return messages;
-	}
+    }
 }
