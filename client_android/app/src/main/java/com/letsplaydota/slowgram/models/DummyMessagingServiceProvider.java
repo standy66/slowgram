@@ -13,15 +13,15 @@ import java.util.List;
 /**
  * Created by andrew on 29.04.15.
  */
-public class DummyMessagingServiceProvider implements  MessagingServiceProvider {
+public abstract class DummyMessagingServiceProvider implements  MessagingServiceProvider {
 	@Override
 	public String authorize(String phoneNumber, String code, String deviceId) throws BadPhoneNumberException, BadConfirmationCodeException, ServerUnavailableException {
 		return "1";
 	}
 
 	@Override
-	public void requestConfirmationCode(String phoneNumber, String deviceId) throws BadPhoneNumberException, ServerUnavailableException {
-
+	public String requestConfirmationCode(String phoneNumber, String deviceId) throws BadPhoneNumberException, ServerUnavailableException {
+		return null;
 	}
 
 	@Override
@@ -40,7 +40,7 @@ public class DummyMessagingServiceProvider implements  MessagingServiceProvider 
 	}
 
 	@Override
-	public String createDialog(String token, Collection<String> phoneNumbers) throws BadTokenException, BadPhoneNumberException {
+	public String createDialog(String token, String phoneNumbers) throws BadTokenException, BadPhoneNumberException {
 		return null;
 	}
 
@@ -52,5 +52,10 @@ public class DummyMessagingServiceProvider implements  MessagingServiceProvider 
 	@Override
 	public List<Message> getMessages(String token, String dialogId, int from, int to) throws BadTokenException, BadDialogId {
 		return null;
+	}
+
+	@Override
+	public void updateUserInformation(String token, String phoneNumber, String avatarURL, String name) {
+
 	}
 }

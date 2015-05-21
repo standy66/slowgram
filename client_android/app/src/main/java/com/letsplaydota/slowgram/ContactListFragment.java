@@ -26,6 +26,6 @@ public class ContactListFragment extends ListFragment {
         Toast.makeText(getActivity(), "It works", Toast.LENGTH_LONG).show();
         getFragmentManager().beginTransaction()
                 .setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out)
-                .replace(R.id.main_layout_fragment, new ContactListFragment()).commit();
+                .replace(R.id.main_layout_fragment, new ContactMessagesFragment()   ).commit();
     }
 }

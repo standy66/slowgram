@@ -27,6 +27,9 @@ public class ChatArrayAdapter extends ArrayAdapter {
 
     public ChatArrayAdapter(Context context, int textViewResourceId) {
         super(context, textViewResourceId);
+        add(new Message());
+        add(new Message());
+        add(new Message());
     }
 
     public int getCount() {

@@ -18,10 +18,9 @@ public class ContactMessagesFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.contact_messages_fragment, container);
+        View v = inflater.inflate(R.layout.contact_messages_fragment, container, false);
         messagesListView = (ListView) v.findViewById(R.id.message_list_view);
-
-
+        messagesListView.setAdapter(new ChatArrayAdapter(getActivity().getApplicationContext(), R.layout.single_message));
 
         return v;
     }
