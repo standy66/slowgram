@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   resources :users
+  resources :conversations
+  resources :messages
+
   root 'static_pages#index'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
