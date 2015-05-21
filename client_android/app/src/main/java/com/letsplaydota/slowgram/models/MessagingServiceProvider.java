@@ -33,11 +33,10 @@ public interface MessagingServiceProvider {
 	 * @param phoneNumber user's phone number the code would be sent to
 	 * @param deviceId    device unique id
 	 */
-	void requestConfirmationCode(String phoneNumber, String deviceId)
-			throws BadPhoneNumberException,
-			ServerUnavailableException;
 
-	/**
+    String requestConfirmationCode(String phoneNumber, String deviceId) throws BadPhoneNumberException, ServerUnavailableException;
+
+    /**
 	 * gets a list of contacts
 	 * @param token session token obtained by subsequent call to authorize()
 	 * @return Collection of contacts

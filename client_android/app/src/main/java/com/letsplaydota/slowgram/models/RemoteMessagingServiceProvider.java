@@ -12,9 +12,12 @@ import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpParams;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,7 +43,6 @@ enum HttpRequestType {
 public class RemoteMessagingServiceProvider implements MessagingServiceProvider {
 
     private String remoteAddress;
-
     public RemoteMessagingServiceProvider(String ip, int port) {
         remoteAddress = "http://" + ip + ":" + port;
     }
@@ -50,11 +52,11 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
         return null;
     }
 
-    private final String REQUEST_CODE_ADDRESS = "/request_code";
+    private final String REQUEST_CODE_ADDRESS = "/login";
     private final String REQUEST_CODE_PHONE_FILED = "phone";
     private final String REQUEST_CODE_DEVICE_ID_FIELD = "device_id";
     private final String REQUEST_CODE_TOKEN_FIELD = "remember_token";
-    private final String GET_CONTACT_LIST_ADDRESS = "/get_contact_list";
+    private final String GET_CONTACT_LIST_ADDRESS = "/contact_relations";
     private final String GET_CONTACT_LIST_TOKEN_FIELD = "token";
     private final String GET_CONTACT_LIST_NAME_OF_RETURN_ARRAY = "contacts";
     private final String ADD_CONTACT_TO_CONTACT_LIST_ADDRESS = "/add_contact";
@@ -87,7 +89,7 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
     private final HttpRequestType REQUEST_CODE_HTTP_REQUEST_TYPE = HttpRequestType.POST;
 
     @Override
-    public void requestConfirmationCode(String phoneNumber, String deviceId) throws BadPhoneNumberException, ServerUnavailableException {
+    public String requestConfirmationCode(String phoneNumber, String deviceId) throws BadPhoneNumberException, ServerUnavailableException {
         try {
             HttpClient httpClient = new DefaultHttpClient();
             HttpPost sessionPostRequest = new HttpPost(remoteAddress + REQUEST_CODE_ADDRESS);
@@ -100,7 +102,7 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
 
             String body = EntityUtils.toString(response.getEntity());
             JSONObject jsonObject = new JSONObject(body);
-            String token = jsonObject.getString(REQUEST_CODE_TOKEN_FIELD);
+             return jsonObject.getString(REQUEST_CODE_TOKEN_FIELD);
         } catch (JSONException e) {
             e.printStackTrace();
         } catch (ClientProtocolException e) {
@@ -110,24 +112,20 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return "problem in request";
     }
 
     @Override
     public Collection<Contact> getContactList(String token) throws BadTokenException {
 
         HttpClient httpClient = new DefaultHttpClient();
-        HttpPost sessionPostGetContactList = new HttpPost(remoteAddress + GET_CONTACT_LIST_ADDRESS);
-        List<NameValuePair> nameValuePairs = new ArrayList<>();
-        nameValuePairs.add(new BasicNameValuePair(GET_CONTACT_LIST_TOKEN_FIELD, token));
-        try {
-            sessionPostGetContactList.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-
+        HttpGet sessionGetContactList = new HttpGet(remoteAddress + GET_CONTACT_LIST_ADDRESS);
+        HttpParams params = new BasicHttpParams();
+        params.setParameter(REQUEST_CODE_TOKEN_FIELD, token);
+        sessionGetContactList.setParams(params);
         HttpResponse response = null;
         try {
-            response = httpClient.execute(sessionPostGetContactList);
+            response = httpClient.execute(sessionGetContactList);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -138,18 +136,26 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
         } catch (IOException e) {
             e.printStackTrace();
         }
-        JSONObject jsonObject = null;
+        JSONArray jsonArray = null;
         try {
-            jsonObject = new JSONObject(body);
+            jsonArray = new JSONArray(body);
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
         Collection<Contact> contacts = new ArrayList<Contact>();
-        try {
-            contacts = (Collection<Contact>) jsonObject.get(GET_CONTACT_LIST_NAME_OF_RETURN_ARRAY);
-        } catch (JSONException e) {
-            e.printStackTrace();
+        for(int i = 0; i < jsonArray.length(); ++i){
+            JSONObject object = null;
+            try {
+                object = jsonArray.getJSONObject(i);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            Contact contact = new Contact();
+            contact.parseFromJson(object);
+            contacts.add(contact);
         }
+
         return contacts;
     }
 
