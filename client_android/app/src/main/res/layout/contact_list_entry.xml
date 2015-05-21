@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/common_signin_btn_text_light"
+        android:id="@+id/contact_photo"/>
+
+    <TextView
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:padding="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primary_text_default_material_light"
+        android:layout_toRightOf="@id/contact_photo"
+        android:id="@+id/contact_name"
+        android:layout_marginLeft="20dp"
+        android:text="Vasya Pupkin"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I love you"
+        android:textColor="@color/primary_text_default_material_light"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/contact_name"
+        android:layout_toRightOf="@id/contact_photo"/>
+
+
+
+</RelativeLayout>

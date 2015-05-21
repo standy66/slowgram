@@ -1,10 +1,14 @@
 package com.letsplaydota.slowgram;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import org.json.JSONArray;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -19,6 +23,12 @@ public class MainActivity extends ActionBarActivity {
 			throw new RuntimeException("no auth token in intent extra for MainActivity");
 		}
 		Toast.makeText(this, token, Toast.LENGTH_LONG);
+		FragmentManager fm = getFragmentManager();
+		Fragment fragment = fm.findFragmentById(R.id.main_layout_fragment);
+		if (fragment == null) {
+			fragment = new ContactListFragment();
+			fm.beginTransaction().add(R.id.main_layout_fragment, fragment).commit();
+		}
 	}
 
 	@Override
