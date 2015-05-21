@@ -67,10 +67,10 @@ public interface MessagingServiceProvider {
 	/**
 	 * creates a dialog with given participants
 	 * @param token session token obtained by session token obtained by subsequent call to authorize()
-	 * @param phoneNumbers phone nunmbers of participants
+	 * @param phoneNumber phone nunmber  participant
 	 * @return unique dialog id
 	 */
-	String createDialog(String token, Collection<String> phoneNumbers)
+	String createDialog(String token, String phoneNumber)
 		throws BadTokenException,
 			BadPhoneNumberException;
 

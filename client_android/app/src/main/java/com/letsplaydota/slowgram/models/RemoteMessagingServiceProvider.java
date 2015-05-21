@@ -43,6 +43,7 @@ enum HttpRequestType {
 public class RemoteMessagingServiceProvider implements MessagingServiceProvider {
 
     private String remoteAddress;
+
     public RemoteMessagingServiceProvider(String ip, int port) {
         remoteAddress = "http://" + ip + ":" + port;
     }
@@ -59,15 +60,15 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
     private final String GET_CONTACT_LIST_ADDRESS = "/contact_relations";
     private final String GET_CONTACT_LIST_TOKEN_FIELD = "token";
     private final String GET_CONTACT_LIST_NAME_OF_RETURN_ARRAY = "contacts";
-    private final String ADD_CONTACT_TO_CONTACT_LIST_ADDRESS = "/add_contact";
+    private final String ADD_CONTACT_TO_CONTACT_LIST_ADDRESS = "/contacts";
     private final String ADD_CONTACT_TO_CONTACT_LIST_TOKEN_FIELD = "token";
     private final String ADD_CONTACT_TO_CONTACT_LIST_ADD_PHONE_FIELD = "add_contact_phone";
-    private final String GET_DIALOG_ADDRESS = "/get_dialog";
+    private final String GET_DIALOG_ADDRESS = "/conversations";
     private final String GET_DIALOG_TOKEN_FIELD = "token";
     private final String GET_DIALOG_FROM_FIELD = "from";
     private final String GET_DIALOG_TO_FIELD = "to";
     private final String GET_DIALOG_NAME_OF_RETURN_ARRAY = "dialogs";
-    private final String CREATE_DIALOG_ADDRESS = "/create_dialog";
+    private final String CREATE_DIALOG_ADDRESS = "/conversations";
     private final String CREATE_DIALOG_TOKEN_FIELD = "token";
     private final String CREATE_DIALOG_PHONE_NUMBERS_FIELD = "phone_numbers";
     private final String CREATE_DIALOG_DIALOG_ID = "dialogID";
@@ -76,14 +77,12 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
     private final String SEND_MESSAGE_DIALOG_ID_FIELD = "dialogID";
     private final String SEND_MESSAGE_CAPTION_FIELD = "caption";
     private final String SEND_MESSAGE_TEXT_FIELD = "text";
-    private final String GET_MESSAGE_ADDRESS = "/get_message";
+    private final String GET_MESSAGE_ADDRESS = "/conversations";
     private final String GET_MESSAGE_TOKEN_FIELD = "token";
     private final String GET_MESSAGE_DIALOG_ID_FIELD = "dialogID";
     private final String GET_MESSAGE_FROM_FIELD = "from";
     private final String GET_MESSAGE_TO_FIELD = "to";
     private final String GET_MESSAGE_RETURNED_MESSAGES = "messages";
-
-
 
 
     private final HttpRequestType REQUEST_CODE_HTTP_REQUEST_TYPE = HttpRequestType.POST;
@@ -102,7 +101,7 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
 
             String body = EntityUtils.toString(response.getEntity());
             JSONObject jsonObject = new JSONObject(body);
-             return jsonObject.getString(REQUEST_CODE_TOKEN_FIELD);
+            return jsonObject.getString(REQUEST_CODE_TOKEN_FIELD);
         } catch (JSONException e) {
             e.printStackTrace();
         } catch (ClientProtocolException e) {
@@ -144,7 +143,7 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
         }
 
         Collection<Contact> contacts = new ArrayList<Contact>();
-        for(int i = 0; i < jsonArray.length(); ++i){
+        for (int i = 0; i < jsonArray.length(); ++i) {
             JSONObject object = null;
             try {
                 object = jsonArray.getJSONObject(i);
@@ -185,16 +184,13 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
     @Override
     public List<Dialog> getDialogs(String token, int from, int to) throws BadTokenException {
         HttpClient httpClient = new DefaultHttpClient();
-        HttpPost sessionGetDialogs = new HttpPost(remoteAddress + GET_DIALOG_ADDRESS);
-        List<NameValuePair> nameValuePairs = new ArrayList<>();
-        nameValuePairs.add(new BasicNameValuePair(GET_DIALOG_TOKEN_FIELD, token));
-        nameValuePairs.add(new BasicNameValuePair(GET_DIALOG_TO_FIELD, String.valueOf(from)));
-        nameValuePairs.add(new BasicNameValuePair(GET_DIALOG_FROM_FIELD, String.valueOf(to)));
-        try {
-            sessionGetDialogs.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+        HttpGet sessionGetDialogs = new HttpGet(remoteAddress + GET_DIALOG_ADDRESS);
+        HttpParams params = new BasicHttpParams();
+        params.setParameter(REQUEST_CODE_TOKEN_FIELD, token);
+        params.setParameter(GET_DIALOG_TOKEN_FIELD, token);
+        params.setParameter(GET_DIALOG_TO_FIELD, String.valueOf(to));
+        params.setParameter(GET_DIALOG_FROM_FIELD, String.valueOf(from));
+        sessionGetDialogs.setParams(params);
 
         HttpResponse response = null;
         try {
@@ -209,28 +205,34 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
         } catch (IOException e) {
             e.printStackTrace();
         }
-        JSONObject jsonObject = null;
+        JSONArray jsonArray = null;
         try {
-            jsonObject = new JSONObject(body);
+            jsonArray = new JSONArray(body);
         } catch (JSONException e) {
             e.printStackTrace();
         }
         List<Dialog> dialogs = new ArrayList<Dialog>();
-        try {
-            dialogs = (List<Dialog>) jsonObject.get(GET_DIALOG_NAME_OF_RETURN_ARRAY);
-        } catch (JSONException e) {
-            e.printStackTrace();
+        for (int i = 0; i < jsonArray.length(); ++i) {
+            JSONObject object = null;
+            try {
+                object = jsonArray.getJSONObject(i);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            Dialog dialog = new Dialog();
+            dialog.parseJson(object);
+            dialogs.add(dialog);
         }
         return dialogs;
     }
 
     @Override
-    public String createDialog(String token, Collection<String> phoneNumbers) throws BadTokenException, BadPhoneNumberException {
+    public String createDialog(String token, String phoneNumber) throws BadTokenException, BadPhoneNumberException {
         HttpClient httpClient = new DefaultHttpClient();
         HttpPost sessionPostCreateDialog = new HttpPost(remoteAddress + CREATE_DIALOG_ADDRESS);
         List<NameValuePair> nameValuePairs = new ArrayList<>();
         nameValuePairs.add(new BasicNameValuePair(CREATE_DIALOG_TOKEN_FIELD, token));
-        nameValuePairs.add(new BasicNameValuePair(CREATE_DIALOG_PHONE_NUMBERS_FIELD, new JSONArray(phoneNumbers).toString()));
+        nameValuePairs.add(new BasicNameValuePair(CREATE_DIALOG_PHONE_NUMBERS_FIELD, phoneNumber));
         try {
             sessionPostCreateDialog.setEntity(new UrlEncodedFormEntity(nameValuePairs));
         } catch (UnsupportedEncodingException e) {
@@ -290,21 +292,17 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
     @Override
     public List<Message> getMessages(String token, String dialogId, int from, int to) throws BadTokenException, BadDialogId {
         HttpClient httpClient = new DefaultHttpClient();
-        HttpPost sessionPostGetMessage = new HttpPost(remoteAddress + GET_MESSAGE_ADDRESS);
+        HttpGet sessionGetMessage = new HttpGet(remoteAddress + GET_MESSAGE_ADDRESS);
         List<NameValuePair> nameValuePairs = new ArrayList<>();
-        nameValuePairs.add(new BasicNameValuePair(GET_MESSAGE_TOKEN_FIELD, token));
-        nameValuePairs.add(new BasicNameValuePair(GET_MESSAGE_DIALOG_ID_FIELD, dialogId));
-        nameValuePairs.add(new BasicNameValuePair(GET_MESSAGE_FROM_FIELD, String.valueOf(from)));
-        nameValuePairs.add(new BasicNameValuePair(GET_MESSAGE_TO_FIELD, String.valueOf(to)));
-        try {
-            sessionPostGetMessage.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-
+        HttpParams params = new BasicHttpParams();
+        params.setParameter(GET_MESSAGE_TOKEN_FIELD, token);
+        params.setParameter(GET_MESSAGE_DIALOG_ID_FIELD, dialogId);
+        params.setParameter(GET_MESSAGE_FROM_FIELD, String.valueOf(from));
+        params.setParameter(GET_MESSAGE_TO_FIELD, String.valueOf(to));
+        sessionGetMessage.setParams(params);
         HttpResponse response = null;
         try {
-            response = httpClient.execute(sessionPostGetMessage);
+            response = httpClient.execute(sessionGetMessage);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -315,17 +313,22 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
         } catch (IOException e) {
             e.printStackTrace();
         }
-        JSONObject jsonObject = null;
+        JSONArray jsonArray = null;
         try {
-            jsonObject = new JSONObject(body);
+            jsonArray = new JSONArray(body);
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        List<Message> messages  = null;
-        try {
-            messages = (List<Message>) jsonObject.get(GET_MESSAGE_RETURNED_MESSAGES);
-        } catch (JSONException e) {
-            e.printStackTrace();
+        List<Message> messages = null;
+        for (int i = 0; i < jsonArray.length(); ++i) {
+            JSONObject object = null;
+            try {
+                object = jsonArray.getJSONObject(i);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            Message message = new Message();
+            message.parseFromJson(object);
         }
         return messages;
     }
