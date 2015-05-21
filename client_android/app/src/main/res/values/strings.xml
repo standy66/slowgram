@@ -5,4 +5,9 @@
 
 	<string name="hello_world">Hello world!</string>
 	<string name="action_settings">Settings</string>
+    <string name="theme">theme</string>
+    <string name="message_view_fragment_message">message</string>
+    <string name="message_view_fragment_theme">theme</string>
+    <string name="message_view_fragment_theme_filling">New Text</string>
+    <string name="message_view_fragment_message_filling">new text</string>
 </resources>

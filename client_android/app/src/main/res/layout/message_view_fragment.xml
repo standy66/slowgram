@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:text="@string/message_view_fragment_theme"
+        android:id="@+id/message_view_fragment_theme"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.10" />
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="20dp"
+        android:text="@string/message_view_fragment_theme_filling"
+        android:id="@+id/message_view_fragment_theme_filling"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.17" />
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="@string/message_view_fragment_message"
+        android:id="@+id/message_view_fragment_message"
+        android:layout_weight="0.35" />
+
+    <TextView
+        android:layout_width="310dp"
+        android:layout_height="410dp"
+        android:text="@string/message_view_fragment_message_filling"
+        android:id="@+id/message_view_fragment_message_filling"
+        android:layout_weight="0.15" />
+</LinearLayout>
