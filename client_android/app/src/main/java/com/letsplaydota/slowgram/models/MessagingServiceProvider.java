@@ -35,7 +35,16 @@ public interface MessagingServiceProvider {
 	 */
 
     String requestConfirmationCode(String phoneNumber, String deviceId) throws BadPhoneNumberException, ServerUnavailableException;
+    /**
+     * Requests server to update information about user
+     *
+     * @param token  session token obtained by subsequent call to authorize()
+     * @param phoneNumber user's phone number the code would be sent to
+     * @param avatarURL user's url of avatar
+     * @param name user's name
+     */
 
+    void updateUserInformation(String token, String phoneNumber, String avatarURL, String name);
     /**
 	 * gets a list of contacts
 	 * @param token session token obtained by subsequent call to authorize()

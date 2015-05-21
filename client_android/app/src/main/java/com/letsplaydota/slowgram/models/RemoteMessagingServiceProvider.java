@@ -60,7 +60,7 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
     private final String GET_CONTACT_LIST_ADDRESS = "/contact_relations";
     private final String GET_CONTACT_LIST_TOKEN_FIELD = "token";
     private final String GET_CONTACT_LIST_NAME_OF_RETURN_ARRAY = "contacts";
-    private final String ADD_CONTACT_TO_CONTACT_LIST_ADDRESS = "/contacts";
+    private final String ADD_CONTACT_TO_CONTACT_LIST_ADDRESS = "/users";
     private final String ADD_CONTACT_TO_CONTACT_LIST_TOKEN_FIELD = "token";
     private final String ADD_CONTACT_TO_CONTACT_LIST_ADD_PHONE_FIELD = "add_contact_phone";
     private final String GET_DIALOG_ADDRESS = "/conversations";
@@ -83,6 +83,11 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
     private final String GET_MESSAGE_FROM_FIELD = "from";
     private final String GET_MESSAGE_TO_FIELD = "to";
     private final String GET_MESSAGE_RETURNED_MESSAGES = "messages";
+    private final String UPDATE_USER_INFORMATIONS_ADDRESS = "/users";
+    private final String UPDATE_USER_INFORMATIONS_TOKEN_FIELD = "token";
+    private final String UPDATE_USER_INFORMATIONS_PHONE_NUMBER_FIELD = "phoneNumber";
+    private final String UPDATE_USER_INFORMATIONS_AVATAR_URL_FIELD = "avatarURL";
+    private final String UPDATE_USER_INFORMATIONS_NAME_FIELD = "name";
 
 
     private final HttpRequestType REQUEST_CODE_HTTP_REQUEST_TYPE = HttpRequestType.POST;
@@ -112,6 +117,29 @@ public class RemoteMessagingServiceProvider implements MessagingServiceProvider 
             e.printStackTrace();
         }
         return "problem in request";
+    }
+
+    @Override
+    public void updateUserInformation(String token, String phoneNumber, String avatarURL, String name) {
+        try {
+            HttpClient httpClient = new DefaultHttpClient();
+            HttpPost sessionPostRequest = new HttpPost(remoteAddress + UPDATE_USER_INFORMATIONS_ADDRESS);
+            List<NameValuePair> nameValuePairs = new ArrayList<>();
+            nameValuePairs.add(new BasicNameValuePair(UPDATE_USER_INFORMATIONS_TOKEN_FIELD, token));
+            nameValuePairs.add(new BasicNameValuePair(UPDATE_USER_INFORMATIONS_NAME_FIELD, name));
+            nameValuePairs.add(new BasicNameValuePair(UPDATE_USER_INFORMATIONS_AVATAR_URL_FIELD, avatarURL));
+            nameValuePairs.add(new BasicNameValuePair(UPDATE_USER_INFORMATIONS_PHONE_NUMBER_FIELD, phoneNumber));
+            sessionPostRequest.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+
+            HttpResponse response = httpClient.execute(sessionPostRequest);
+
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
