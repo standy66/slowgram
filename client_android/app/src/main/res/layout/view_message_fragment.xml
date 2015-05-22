@@ -6,14 +6,14 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="15dp"
+        android:layout_height="wrap_content"
         android:text="@string/message_subject_name"
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.10" />
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
         android:text="message subject goes here"
         android:id="@+id/message_subject"
         android:layout_gravity="center_horizontal"
@@ -27,7 +27,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="410dp"
+        android:layout_height="wrap_content"
         android:text="message body goes here"
         android:id="@+id/message_body"
         android:layout_weight="0.15" />
