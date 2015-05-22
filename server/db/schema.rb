@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150521235946) do
+ActiveRecord::Schema.define(version: 20150522020810) do
 
   create_table "contact_relations", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20150521235946) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.string   "remember_token"
+    t.string   "avatar"
   end
 
 end

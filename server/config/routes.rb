@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :conversations
   resources :messages
 
+  put 'users' => 'users#update'
+
   root 'static_pages#index'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
