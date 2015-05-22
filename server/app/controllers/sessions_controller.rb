@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_or_create_by(phone: PhonyRails.normalize_number(params['phone']))
     if user.valid?
       sign_in user
-      render json: { remember_token: @remember_token }, status: 201
+      render json: current_user.attributes.merge({ remember_token: @remember_token }), status: 201
     else
       render json: user.errors.full_messages, status: 403
     end

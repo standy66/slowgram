@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :contacts, through: :contact_relations
 
   before_create :create_remember_token
+  before_create :create_name
 
   scope :find_by_phone, ->(phone) { where(phone: PhonyRails.normalize_number(phone)).first }
 
@@ -21,7 +22,11 @@ class User < ActiveRecord::Base
 
   private
 
-    def create_remember_token
-      self.remember_token = User.encrypt(User.new_remember_token)
-    end
+  def create_remember_token
+    self.remember_token = User.encrypt(User.new_remember_token)
+  end
+
+  def create_name
+    self.name ||= "No named"
+  end
 end
