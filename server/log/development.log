@@ -8671,3 +8671,186 @@ Unpermitted parameter: remember_token
   [1m[36m (0.3ms)[0m  [1mcommit transaction[0m
 Completed 200 OK in 11ms (Views: 0.7ms | ActiveRecord: 0.8ms)
   [1m[36mUser Load (4.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/conversations?remember_token=fScZXy6Hnq-5Iic4tFgepA==" for 127.0.0.1 at 2015-05-22 06:16:29 +0300
+Processing by ConversationsController#index as */*
+  Parameters: {"remember_token"=>"fScZXy6Hnq-5Iic4tFgepA=="}
+  [1m[35mUser Load (1.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "1f759dc2be4ed20b959275825eed4208e3a78d2e"]]
+Completed 500 Internal Server Error in 42ms
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/models/conversation.rb:12:in `block in <class:Conversation>'
+  app/controllers/conversations_controller.rb:5:in `index'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.2ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (55.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (31.3ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (60.9ms)
+
+
+Started GET "/conversations?remember_token=fScZXy6Hnq-5Iic4tFgepA==" for 127.0.0.1 at 2015-05-22 06:18:22 +0300
+Processing by ConversationsController#index as */*
+  Parameters: {"remember_token"=>"fScZXy6Hnq-5Iic4tFgepA=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "1f759dc2be4ed20b959275825eed4208e3a78d2e"]]
+Completed 500 Internal Server Error in 36ms
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/models/conversation.rb:12:in `block in <class:Conversation>'
+  app/controllers/conversations_controller.rb:5:in `index'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (28.1ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (55.7ms)
+
+
+Started GET "/conversations?remember_token=fScZXy6Hnq-5Iic4tFgepA==" for 127.0.0.1 at 2015-05-22 06:18:54 +0300
+Processing by ConversationsController#index as */*
+  Parameters: {"remember_token"=>"fScZXy6Hnq-5Iic4tFgepA=="}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "1f759dc2be4ed20b959275825eed4208e3a78d2e"]]
+Completed 500 Internal Server Error in 44ms
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/models/conversation.rb:12:in `block in <class:Conversation>'
+  app/controllers/conversations_controller.rb:6:in `index'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.8ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.3ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.2ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (29.3ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (1.2ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.2ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (64.4ms)
+
+
+Started GET "/conversations?remember_token=fScZXy6Hnq-5Iic4tFgepA==" for 127.0.0.1 at 2015-05-22 06:19:02 +0300
+Processing by ConversationsController#index as */*
+  Parameters: {"remember_token"=>"fScZXy6Hnq-5Iic4tFgepA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "1f759dc2be4ed20b959275825eed4208e3a78d2e"]]
+Completed 500 Internal Server Error in 93ms
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/models/conversation.rb:12:in `block in <class:Conversation>'
+  app/controllers/conversations_controller.rb:6:in `index'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.2ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.1ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (28.4ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (1.1ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (58.4ms)
+
+
+Started GET "/conversations?remember_token=fScZXy6Hnq-5Iic4tFgepA==" for 127.0.0.1 at 2015-05-22 06:19:33 +0300
+Processing by ConversationsController#index as */*
+  Parameters: {"remember_token"=>"fScZXy6Hnq-5Iic4tFgepA=="}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "1f759dc2be4ed20b959275825eed4208e3a78d2e"]]
+Completed 500 Internal Server Error in 31ms
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/models/conversation.rb:12:in `block in <class:Conversation>'
+  app/controllers/conversations_controller.rb:7:in `index'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.0ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (41.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (1.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (82.3ms)
+
+
+Started GET "/conversations?remember_token=fScZXy6Hnq-5Iic4tFgepA==" for 127.0.0.1 at 2015-05-22 06:20:06 +0300
+Processing by ConversationsController#index as */*
+  Parameters: {"remember_token"=>"fScZXy6Hnq-5Iic4tFgepA=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "1f759dc2be4ed20b959275825eed4208e3a78d2e"]]
+  [1m[35mConversation Load (0.3ms)[0m  SELECT "conversations".* FROM "conversations" WHERE (conversations.sender_id = 2 or conversations.recipient_id = 2)
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  ORDER BY "messages"."created_at" DESC LIMIT 1[0m  [["conversation_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  Rendered conversations/index.json.jbuilder (39.7ms)
+Completed 200 OK in 72ms (Views: 50.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/conversations?remember_token=fScZXy6Hnq-5Iic4tFgepA==" for 127.0.0.1 at 2015-05-22 06:20:22 +0300
+Processing by ConversationsController#index as */*
+  Parameters: {"remember_token"=>"fScZXy6Hnq-5Iic4tFgepA=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "1f759dc2be4ed20b959275825eed4208e3a78d2e"]]
+  [1m[35mConversation Load (0.3ms)[0m  SELECT "conversations".* FROM "conversations" WHERE (conversations.sender_id = 2 or conversations.recipient_id = 2)
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  ORDER BY "messages"."created_at" DESC LIMIT 1[0m  [["conversation_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  Rendered conversations/index.json.jbuilder (36.3ms)
+Completed 200 OK in 68ms (Views: 44.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/conversations?remember_token=fScZXy6Hnq-5Iic4tFgepA==" for 127.0.0.1 at 2015-05-22 06:20:31 +0300
+Processing by ConversationsController#index as */*
+  Parameters: {"remember_token"=>"fScZXy6Hnq-5Iic4tFgepA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "1f759dc2be4ed20b959275825eed4208e3a78d2e"]]
+  [1m[35mConversation Load (0.4ms)[0m  SELECT "conversations".* FROM "conversations" WHERE (conversations.sender_id = 2 or conversations.recipient_id = 2)
+  [1m[36mMessage Load (0.4ms)[0m  [1mSELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  ORDER BY "messages"."created_at" DESC LIMIT 1[0m  [["conversation_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  Rendered conversations/index.json.jbuilder (42.7ms)
+Completed 200 OK in 91ms (Views: 55.7ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/login?phone=71111111111" for 127.0.0.1 at 2015-05-22 06:27:08 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"phone"=>"71111111111"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1[0m  [["phone", "+71111111111"]]
+  [1m[35m (0.6ms)[0m  begin transaction
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "users" ("phone", "created_at", "updated_at", "remember_token", "name") VALUES (?, ?, ?, ?, ?)[0m  [["phone", "+71111111111"], ["created_at", "2015-05-22 03:27:08.223583"], ["updated_at", "2015-05-22 03:27:08.223583"], ["remember_token", "47ff7161babcb75b8b407394aff2050a4b3d3294"], ["name", "No named"]]
+  [1m[35m (12.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["remember_token", "87ba05bd23789c401bed71835b20fc2558799596"], ["updated_at", "2015-05-22 03:27:08.244475"], ["id", 5]]
+  [1m[36m (8.1ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 59ms (Views: 0.6ms | ActiveRecord: 25.3ms)

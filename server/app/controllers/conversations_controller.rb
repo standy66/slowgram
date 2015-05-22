@@ -6,7 +6,7 @@ class ConversationsController < ApplicationController
   end
 
   def show
-    @conversation = Conversation.find(params['id']) if params['id'].present?
+    @conversation = Conversation.where(id: params['id']).first if params['id'].present?
     @conversation ||= Conversation.own_for(sender, recipient).first
 
     if @conversation.blank? || ![@conversation.sender, @conversation.recipient].include?(current_user)
@@ -14,7 +14,9 @@ class ConversationsController < ApplicationController
     end
 
     @messages = @conversation.messages
-    @messages = @messages.where('delivered_at < ?', Time.now)
+    @messages = @messages.where('messages.sender_id = :user_id or
+                                 (messages.recipient_id = :user_id and delivered_at < :time)',
+                                 user_id: current_user.id, time: Time.now)
   end
 
   def create

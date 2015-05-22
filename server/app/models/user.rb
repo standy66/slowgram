@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   before_create :create_remember_token
   before_create :create_name
 
-  scope :find_by_phone, ->(phone) { where(phone: PhonyRails.normalize_number(phone)).first }
+  scope :where_phone, ->(phone) { where(phone: PhonyRails.normalize_number(phone)) }
 
   def User.new_remember_token
     SecureRandom.base64.tr('+/', '-_')

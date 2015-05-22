@@ -2,9 +2,11 @@ json.array! @conversations do |conversation|
   json.extract! conversation, :id
   json.last_message do
     last_message = conversation.messages.order(created_at: :desc).first
-    json.extract! last_message, :id, :title, :body if last_message.delivered_at < Time.now
-    json.extract! last_message, :delivered_at
-    json.own last_message.sender == current_user
+    if last_message.present?
+      json.extract! last_message, :id, :title, :body if last_message.delivered_at < Time.now
+      json.extract! last_message, :delivered_at
+      json.own last_message.sender == current_user
+    end
   end
 
   json.sender do
