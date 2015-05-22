@@ -13,7 +13,7 @@ public class Dialog {
     int id;
     Contact sender;
     Contact recipient;
-    String lastMessage;
+    Message lastMessage;
 
     public int getId() {
         return id;
@@ -27,6 +27,10 @@ public class Dialog {
         return recipient;
     }
 
+    public Message getLastMessage() {
+        return lastMessage;
+    }
+
     public static Dialog parseJSON(JSONObject object) {
         Dialog res = new Dialog();
         try {
@@ -37,7 +41,7 @@ public class Dialog {
             if (object.has("recipient"))
                 res.recipient = Contact.parseJSON(object.getJSONObject("recipient"));
             if (object.has("last_message"))
-                res.lastMessage = object.getString("last_message");
+                res.lastMessage = Message.parseJSON(object.getJSONObject("last_message"));
             return res;
         } catch (JSONException e) {
             throw new RuntimeException(e);

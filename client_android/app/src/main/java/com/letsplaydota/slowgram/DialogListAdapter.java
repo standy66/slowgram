@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import com.letsplaydota.slowgram.models.Contact;
 import com.letsplaydota.slowgram.models.Dialog;
@@ -49,8 +50,15 @@ public class DialogListAdapter extends BaseAdapter {
     public View getView(int i, View convertView, ViewGroup viewGroup) {
         View view = convertView;
         if (view == null) {
+            Dialog dialog = (Dialog) getItem(i);
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(resourceId, viewGroup, false);
+            TextView contactName = (TextView) view.findViewById(R.id.contact_name);
+            TextView lastMessage = (TextView) view.findViewById(R.id.last_message);
+            contactName.setText(dialog.getRecipient().getPhone());
+            if (dialog.getLastMessage() != null) {
+                lastMessage.setText(dialog.getLastMessage().getBody());
+            }
 
 
         }
