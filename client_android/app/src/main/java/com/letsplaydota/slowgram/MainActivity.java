@@ -3,12 +3,11 @@ package com.letsplaydota.slowgram;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
-
-import org.json.JSONArray;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -16,6 +15,10 @@ public class MainActivity extends ActionBarActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+
+		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+		StrictMode.setThreadPolicy(policy);
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		token = getIntent().getStringExtra(getString(R.string.intent_key_auth_token));
@@ -26,7 +29,7 @@ public class MainActivity extends ActionBarActivity {
 		FragmentManager fm = getFragmentManager();
 		Fragment fragment = fm.findFragmentById(R.id.main_layout_fragment);
 		if (fragment == null) {
-			fragment = new ContactListFragment();
+			fragment = new DialogListFragment();
 			fm.beginTransaction().add(R.id.main_layout_fragment, fragment).commit();
 		}
 	}
@@ -45,11 +48,22 @@ public class MainActivity extends ActionBarActivity {
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
 
-		//noinspection SimplifiableIfStatement
-		if (id == R.id.action_settings) {
-			return true;
-		}
+		switch (id) {
+			case R.id.action_settings:
+				return true;
 
-		return super.onOptionsItemSelected(item);
+			case R.id.action_add:
+				getFragmentManager().beginTransaction().replace(R.id.main_layout_fragment, new AddContactFragment())
+						.addToBackStack(null).commit();
+				return true;
+
+			default:
+				return super.onOptionsItemSelected(item);
+		}
+	}
+
+	@Override
+	public void onBackPressed() {
+		getFragmentManager().popBackStack();
 	}
 }

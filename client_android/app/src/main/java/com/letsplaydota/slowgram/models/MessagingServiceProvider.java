@@ -50,7 +50,7 @@ public interface MessagingServiceProvider {
 	 * @param token session token obtained by subsequent call to authorize()
 	 * @return Collection of contacts
 	 */
-	Collection<Contact> getContactList(String token)
+	List<Contact> getContactList(String token)
 			throws BadTokenException;
 
 	/**
@@ -79,7 +79,7 @@ public interface MessagingServiceProvider {
 	 * @param phoneNumber phone nunmber  participant
 	 * @return unique dialog id
 	 */
-	String createDialog(String token, String phoneNumber)
+	Dialog createDialog(String token, String phoneNumber)
 		throws BadTokenException,
 			BadPhoneNumberException;
 
@@ -90,9 +90,13 @@ public interface MessagingServiceProvider {
 	 * @param caption message caption
 	 * @param text message body
 	 */
-	void sendMessage(String token, String dialogId, String caption, String text)
+	void sendMessage(String token, int dialogId, String caption, String text)
 		throws BadTokenException,
 			BadDialogId;
+
+	//void sendMessageByPhone(String token, String phone, String subbject, String text);
+
+	//List<Message> getMessagesByPhone(String token, String phone, int from, int to);
 
 	/**
 	 * retrieves messages from the given dialog
@@ -102,9 +106,7 @@ public interface MessagingServiceProvider {
 	 * @param to number of ending message ordered by sent time
 	 * @return list of messages
 	 */
-	List<Message> getMessages(String token, String dialogId, int from, int to)
+	List<Message> getMessages(String token, int dialogId, int from, int to)
 		throws BadTokenException,
 			BadDialogId;
-
-
 }

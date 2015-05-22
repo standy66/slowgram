@@ -5,24 +5,26 @@
     android:weightSum="1">
 
     <EditText
-        android:hint="@string/new_message_theme"
+        android:hint="@string/new_message_subject_hint"
         android:layout_width="match_parent"
-        android:layout_height="17dp"
-        android:id="@+id/editText2" />
+        android:layout_height="wrap_content"
+        android:id="@+id/new_message_subject" />
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:hint="@string/new_message_body_hint"
         android:inputType="textMultiLine"
+        android:gravity="top"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/new_message_body"
         android:layout_weight="0.98" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/send_message_button"
-        android:id="@+id/button"
+        android:text="@string/message_send_button"
+        android:id="@+id/send_message"
         android:layout_gravity="right" />
 
 </LinearLayout>

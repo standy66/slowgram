@@ -25,11 +25,12 @@ public class ChatArrayAdapter extends ArrayAdapter {
         super.add(object);
     }
 
-    public ChatArrayAdapter(Context context, int textViewResourceId) {
+    public ChatArrayAdapter(Context context, int textViewResourceId, List<Message> messages) {
         super(context, textViewResourceId);
-        add(new Message());
-        add(new Message());
-        add(new Message());
+        this.chatMessageList = messages;
+        //add(new Message());
+        //add(new Message());
+        //add(new Message());
     }
 
     public int getCount() {
@@ -44,14 +45,14 @@ public class ChatArrayAdapter extends ArrayAdapter {
         View row = convertView;
         if (row == null) {
             LayoutInflater inflater = (LayoutInflater) this.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            row = inflater.inflate(R.layout.single_message, parent, false);
+            row = inflater.inflate(R.layout.single_message_entry, parent, false);
         }
         LinearLayout singleMessageContainer = (LinearLayout) row.findViewById(R.id.singleMessageContainer);
         Message chatMessageObj = getItem(position);
         TextView chatText = (TextView) row.findViewById(R.id.singleMessage);
         chatText.setText(chatMessageObj.toString());
-        chatText.setBackgroundResource(position % 2 == 0 ? R.drawable.bubble_right : R.drawable.bubble_left);
-        singleMessageContainer.setGravity(position % 2 == 0 ? Gravity.RIGHT : Gravity.LEFT);
+        chatText.setBackgroundResource(chatMessageObj.isOwn() ? R.drawable.bubble_right : R.drawable.bubble_left);
+        singleMessageContainer.setGravity(chatMessageObj.isOwn() ? Gravity.RIGHT : Gravity.LEFT);
         return row;
     }
 }

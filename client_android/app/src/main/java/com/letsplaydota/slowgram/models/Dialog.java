@@ -10,21 +10,37 @@ import java.util.Collection;
  * Created by andrew on 17.04.15.
  */
 public class Dialog {
-    String dialogId;
-    Contact creator;
-    Contact participant;
-    String dialogPicture;
+    int id;
+    Contact sender;
+    Contact recipient;
+    String lastMessage;
 
-    public void parseJson(JSONObject object) {
+    public int getId() {
+        return id;
+    }
+
+    public Contact getSender() {
+        return sender;
+    }
+
+    public Contact getRecipient() {
+        return recipient;
+    }
+
+    public static Dialog parseJSON(JSONObject object) {
+        Dialog res = new Dialog();
         try {
-            dialogId = object.getString("dialogId");
-            creator = (new Contact());
-            creator.parseFromJson(object.getJSONObject("creator"));
-            participant = new Contact();
-            participant.parseFromJson(object.getJSONObject("participant"));
-            dialogPicture = object.getString("dialogPicture");
+            if (object.has("id"))
+                res.id = object.getInt("id");
+            if (object.has("sender"))
+                res.sender = Contact.parseJSON(object.getJSONObject("sender"));
+            if (object.has("recipient"))
+                res.recipient = Contact.parseJSON(object.getJSONObject("recipient"));
+            if (object.has("last_message"))
+                res.lastMessage = object.getString("last_message");
+            return res;
         } catch (JSONException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 }

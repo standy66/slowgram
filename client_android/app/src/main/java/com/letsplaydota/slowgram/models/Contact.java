@@ -10,38 +10,41 @@ import java.net.URI;
  * Created by andrew on 17.04.15.
  */
 public class Contact {
-    String firstName;
-    String lastName;
-    String profilePictures;
-    String phoneNumber;
+    int id;
+    String name;
+    String phone;
+    String avatar;
 
-    public String getFirstName() {
-        return firstName;
+    public int getId() {
+        return id;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getPhone() {
+        return phone;
     }
 
-    public String getProfilePictures() {
-        return profilePictures;
+    public String getName() {
+        return name;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getAvatar() {
+        return avatar;
     }
 
-
-    public void parseFromJson(JSONObject object) {
+    public static Contact parseJSON(JSONObject object) {
+        Contact res = new Contact();
         try {
-            firstName = object.getString("firstName");
-            lastName = object.getString("lastName");
-            phoneNumber = object.getString("phoneNumber");
-            profilePictures = object.getString("ProfilePictures");
+            if (object.has("name"))
+                res.name = object.getString("name");
+            if (object.has("id"))
+                res.id = object.getInt("id");
+            if (object.has("phone"))
+                res.phone = object.getString("phone");
+            if (object.has("avatar"))
+                res.avatar = object.getString("avatar");
+            return res;
         } catch (JSONException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
-
-
     }
 }

@@ -6,26 +6,38 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import com.letsplaydota.slowgram.models.Contact;
+import com.letsplaydota.slowgram.models.Dialog;
+
+import java.util.Collection;
+import java.util.List;
+
 /**
  * Created by andrew on 21.05.15.
  */
-public class ContactListAdapter extends BaseAdapter {
+public class DialogListAdapter extends BaseAdapter {
     private Context context;
     private int resourceId;
+    private List<Dialog> contactCollection;
 
-    public ContactListAdapter(Context context, int resourceId) {
+    public void add(Dialog d) {
+        contactCollection.add(d);
+    }
+
+    public DialogListAdapter(Context context, int resourceId, List<Dialog> contactCollection) {
         this.context = context;
         this.resourceId = resourceId;
+        this.contactCollection = contactCollection;
     }
 
     @Override
     public int getCount() {
-        return 10;
+        return contactCollection.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return new Object();
+        return contactCollection.get(i);
     }
 
     @Override
@@ -39,6 +51,8 @@ public class ContactListAdapter extends BaseAdapter {
         if (view == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(resourceId, viewGroup, false);
+
+
         }
 
         return view;

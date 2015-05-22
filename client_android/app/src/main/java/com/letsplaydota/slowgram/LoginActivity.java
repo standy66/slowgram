@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.letsplaydota.slowgram.models.ServerConnector;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
@@ -46,6 +48,7 @@ public class LoginActivity extends Activity {
 		SharedPreferences preferences = getSharedPreferences(getString(R.string.auth_pref_name), MODE_PRIVATE);
 		String token = preferences.getString(getString(R.string.pref_token), null);
 		if (token != null) {
+			ServerConnector.setToken(token);
 			Intent intent = new Intent().setClass(this, MainActivity.class);
 			intent.putExtra(getString(R.string.intent_key_auth_token), token);
 			finish();
