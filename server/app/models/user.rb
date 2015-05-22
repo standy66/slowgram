@@ -7,9 +7,6 @@ class User < ActiveRecord::Base
   has_many :contact_relations
   has_many :contacts, through: :contact_relations
 
-  has_many :users_to_conversations, foreign_key: 'sender_id'
-  has_many :conversations, through: :users_to_conversations
-
   before_create :create_remember_token
 
   scope :find_by_phone, ->(phone) { where(phone: PhonyRails.normalize_number(phone)).first }

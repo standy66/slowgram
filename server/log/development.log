@@ -6400,3 +6400,1557 @@ Processing by ConversationsController#show as */*
   Rendered shared/_user_box.json.jbuilder (0.2ms)
   Rendered conversations/show.json.jbuilder (22.0ms)
 Completed 200 OK in 36ms (Views: 29.6ms | ActiveRecord: 1.3ms)
+  [1m[36mMessage Load (4.7ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddDeliveredAtToMessage (20150521230655)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "messages" ADD "delivered_at" datetime[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150521230655"]]
+  [1m[36m (9.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/login" for 127.0.0.1 at 2015-05-22 02:12:02 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/login"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/shocoladka/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/shocoladka/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/shocoladka/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.9ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (16.4ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (87.0ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.2ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (30.8ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (63.4ms)
+
+
+Started GET "/login?phone=79165730095" for 127.0.0.1 at 2015-05-22 02:12:13 +0300
+
+ActionController::RoutingError (No route matches [GET] "/login"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/shocoladka/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/shocoladka/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/shocoladka/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.1ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.3ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.8ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (65.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (174.4ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (35.4ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (238.8ms)
+
+
+Started POST "/login?phone=79165730095" for 127.0.0.1 at 2015-05-22 02:12:20 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"phone"=>"79165730095"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1  [["phone", "+79165730095"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  UPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["remember_token", "a0727acffeb7b007ac696933f0d350a9326d1f80"], ["updated_at", "2015-05-21 23:12:20.717994"], ["id", 1]]
+  [1m[36m (8.6ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 62ms (Views: 3.2ms | ActiveRecord: 12.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-22 02:12:39 +0300
+
+AbstractController::ActionNotFound (The action 'create' could not be found for UsersController):
+  actionpack (4.2.0) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal.rb:236:in `block in action'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:42:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:802:in `call'
+  rack (1.6.0) lib/rack/etag.rb:24:in `call'
+  rack (1.6.0) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.0) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:647:in `call'
+  activerecord (4.2.0) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_call_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/shocoladka/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/shocoladka/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/shocoladka/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.6ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x00000006aaff90 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000006aafcc0 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x00000006aaccc8 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started GET "/users" for 127.0.0.1 at 2015-05-22 02:12:47 +0300
+Processing by UsersController#index as */*
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "da39a3ee5e6b4b0d3255bfef95601890afd80709"]]
+Filter chain halted as :signed_in_user rendered or redirected
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.6ms)
+
+
+Started POST "/users?remember_token=HYIOxljbFsVDXfFG1tP_RQ==" for 127.0.0.1 at 2015-05-22 02:13:12 +0300
+
+AbstractController::ActionNotFound (The action 'create' could not be found for UsersController):
+  actionpack (4.2.0) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal.rb:236:in `block in action'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:42:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:802:in `call'
+  rack (1.6.0) lib/rack/etag.rb:24:in `call'
+  rack (1.6.0) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.0) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:647:in `call'
+  activerecord (4.2.0) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_call_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/shocoladka/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/shocoladka/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/shocoladka/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (28.1ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (55.2ms)
+
+
+Started POST "/conversations?remember_token=HYIOxljbFsVDXfFG1tP_RQ==" for 127.0.0.1 at 2015-05-22 02:13:35 +0300
+Processing by ConversationsController#create as */*
+  Parameters: {"remember_token"=>"HYIOxljbFsVDXfFG1tP_RQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "a0727acffeb7b007ac696933f0d350a9326d1f80"]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUsersToConversation Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users_to_conversations" WHERE ("users_to_conversations"."sender_id" = 1 AND "users_to_conversations"."recipient_id" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "conversations" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-05-21 23:13:35.144023"], ["updated_at", "2015-05-21 23:13:35.144023"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users_to_conversations" ("sender_id", "created_at", "updated_at", "conversation_id") VALUES (?, ?, ?, ?)[0m  [["sender_id", 1], ["created_at", "2015-05-21 23:13:35.116055"], ["updated_at", "2015-05-21 23:13:35.116055"], ["conversation_id", 4]]
+  [1m[35mUsersToConversation Load (0.3ms)[0m  SELECT  "users_to_conversations".* FROM "users_to_conversations" WHERE "users_to_conversations"."sender_id" IS NULL AND "users_to_conversations"."recipient_id" = 1 AND "users_to_conversations"."conversation_id" = 4 LIMIT 1
+  [1m[36mUsersToConversation Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users_to_conversations" WHERE ("users_to_conversations"."sender_id" IS NULL AND "users_to_conversations"."recipient_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users_to_conversations" ("recipient_id", "conversation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["recipient_id", 1], ["conversation_id", 4], ["created_at", "2015-05-21 23:13:35.171892"], ["updated_at", "2015-05-21 23:13:35.171892"]]
+  [1m[36mUsersToConversation Load (0.2ms)[0m  [1mSELECT  "users_to_conversations".* FROM "users_to_conversations" WHERE "users_to_conversations"."sender_id" = 1 AND "users_to_conversations"."recipient_id" IS NULL AND "users_to_conversations"."conversation_id" = 4 LIMIT 1[0m
+  [1m[35m (14.4ms)[0m  commit transaction
+Completed 201 Created in 112ms (Views: 0.5ms | ActiveRecord: 18.3ms)
+
+
+Started POST "/conversations?remember_token=HYIOxljbFsVDXfFG1tP_RQ==" for 127.0.0.1 at 2015-05-22 02:15:20 +0300
+Processing by ConversationsController#create as */*
+  Parameters: {"remember_token"=>"HYIOxljbFsVDXfFG1tP_RQ=="}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "a0727acffeb7b007ac696933f0d350a9326d1f80"]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUsersToConversation Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users_to_conversations" WHERE ("users_to_conversations"."sender_id" = 1 AND "users_to_conversations"."recipient_id" IS NULL) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 107ms (Views: 0.8ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/conversations?remember_token=HYIOxljbFsVDXfFG1tP_RQ==" for 127.0.0.1 at 2015-05-22 02:15:24 +0300
+Processing by ConversationsController#create as */*
+  Parameters: {"remember_token"=>"HYIOxljbFsVDXfFG1tP_RQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "a0727acffeb7b007ac696933f0d350a9326d1f80"]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUsersToConversation Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users_to_conversations" WHERE ("users_to_conversations"."sender_id" = 1 AND "users_to_conversations"."recipient_id" IS NULL) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 11ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/conversations?remember_token=HYIOxljbFsVDXfFG1tP_RQ==" for 127.0.0.1 at 2015-05-22 02:15:38 +0300
+Processing by ConversationsController#create as */*
+  Parameters: {"remember_token"=>"HYIOxljbFsVDXfFG1tP_RQ=="}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "a0727acffeb7b007ac696933f0d350a9326d1f80"]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUsersToConversation Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users_to_conversations" WHERE ("users_to_conversations"."sender_id" = 1 AND "users_to_conversations"."recipient_id" IS NULL) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 60ms (Views: 0.5ms | ActiveRecord: 4.2ms)
+  [1m[36mConversation Load (3.5ms)[0m  [1mSELECT "conversations".* FROM "conversations"[0m
+  [1m[35mConversation Load (0.4ms)[0m  SELECT  "conversations".* FROM "conversations"  ORDER BY "conversations"."id" DESC LIMIT 1
+  [1m[36mUsersToConversation Load (0.3ms)[0m  [1mSELECT  "users_to_conversations".* FROM "users_to_conversations"  ORDER BY "users_to_conversations"."id" DESC LIMIT 1[0m
+  [1m[35mUsersToConversation Load (0.5ms)[0m  SELECT  "users_to_conversations".* FROM "users_to_conversations"  ORDER BY "users_to_conversations"."id" DESC LIMIT 1
+  [1m[36mSQL (7.3ms)[0m  [1mDELETE FROM "users_to_conversations" WHERE "users_to_conversations"."id" = ?[0m  [["id", 8]]
+  [1m[35mUsersToConversation Load (0.5ms)[0m  SELECT  "users_to_conversations".* FROM "users_to_conversations"  ORDER BY "users_to_conversations"."id" DESC LIMIT 1
+  [1m[36mUsersToConversation Load (0.5ms)[0m  [1mSELECT  "users_to_conversations".* FROM "users_to_conversations"  ORDER BY "users_to_conversations"."id" DESC LIMIT 1[0m
+  [1m[35mSQL (9.8ms)[0m  DELETE FROM "users_to_conversations" WHERE "users_to_conversations"."id" = ?  [["id", 7]]
+  [1m[36mUsersToConversation Load (0.4ms)[0m  [1mSELECT  "users_to_conversations".* FROM "users_to_conversations"  ORDER BY "users_to_conversations"."id" DESC LIMIT 1[0m
+  [1m[35mConversation Load (0.4ms)[0m  SELECT  "conversations".* FROM "conversations"  ORDER BY "conversations"."id" DESC LIMIT 1
+
+
+Started POST "/conversations?remember_token=HYIOxljbFsVDXfFG1tP_RQ==" for 127.0.0.1 at 2015-05-22 02:18:44 +0300
+Processing by ConversationsController#create as */*
+  Parameters: {"remember_token"=>"HYIOxljbFsVDXfFG1tP_RQ=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "a0727acffeb7b007ac696933f0d350a9326d1f80"]]
+Completed 500 Internal Server Error in 21ms
+
+ArgumentError (Unknown key: :uniqueness. Valid keys are: :on, :if, :unless, :prepend. Perhaps you meant to call `validates` instead of `validate`?):
+  app/models/users_to_conversation.rb:7:in `<class:UsersToConversation>'
+  app/models/users_to_conversation.rb:1:in `<top (required)>'
+  app/controllers/conversations_controller.rb:20:in `create'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.8ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.1ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (26.9ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (55.0ms)
+
+
+Started POST "/conversations?remember_token=HYIOxljbFsVDXfFG1tP_RQ==" for 127.0.0.1 at 2015-05-22 02:19:40 +0300
+Processing by ConversationsController#create as */*
+  Parameters: {"remember_token"=>"HYIOxljbFsVDXfFG1tP_RQ=="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "a0727acffeb7b007ac696933f0d350a9326d1f80"]]
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mUsersToConversation Exists (0.2ms)[0m  SELECT  1 AS one FROM "users_to_conversations" WHERE ("users_to_conversations"."sender_id" = 1 AND "users_to_conversations"."recipient_id" IS NULL) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 52ms (Views: 0.3ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/conversations?remember_token=HYIOxljbFsVDXfFG1tP_RQ==" for 127.0.0.1 at 2015-05-22 02:20:25 +0300
+Processing by ConversationsController#create as */*
+  Parameters: {"phone"=>"79165730095", "remember_token"=>"HYIOxljbFsVDXfFG1tP_RQ=="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "a0727acffeb7b007ac696933f0d350a9326d1f80"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUsersToConversation Exists (0.5ms)[0m  SELECT  1 AS one FROM "users_to_conversations" WHERE ("users_to_conversations"."sender_id" = 1 AND "users_to_conversations"."recipient_id" IS NULL) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 13ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/conversations?remember_token=HYIOxljbFsVDXfFG1tP_RQ==" for 127.0.0.1 at 2015-05-22 02:20:28 +0300
+Processing by ConversationsController#create as */*
+  Parameters: {"phone"=>"79165730095", "remember_token"=>"HYIOxljbFsVDXfFG1tP_RQ=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "a0727acffeb7b007ac696933f0d350a9326d1f80"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUsersToConversation Exists (0.4ms)[0m  SELECT  1 AS one FROM "users_to_conversations" WHERE ("users_to_conversations"."sender_id" = 1 AND "users_to_conversations"."recipient_id" IS NULL) LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 13ms (Views: 0.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/conversations?remember_token=HYIOxljbFsVDXfFG1tP_RQ==" for 127.0.0.1 at 2015-05-22 02:20:41 +0300
+Processing by ConversationsController#create as */*
+  Parameters: {"recipient_phone"=>"79165730095", "remember_token"=>"HYIOxljbFsVDXfFG1tP_RQ=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "a0727acffeb7b007ac696933f0d350a9326d1f80"]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["phone", "+79165730095"]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUsersToConversation Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users_to_conversations" WHERE ("users_to_conversations"."sender_id" = 1 AND "users_to_conversations"."recipient_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (2.2ms)[0m  INSERT INTO "conversations" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-05-21 23:20:41.146264"], ["updated_at", "2015-05-21 23:20:41.146264"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users_to_conversations" ("sender_id", "recipient_id", "created_at", "updated_at", "conversation_id") VALUES (?, ?, ?, ?, ?)[0m  [["sender_id", 1], ["recipient_id", 1], ["created_at", "2015-05-21 23:20:41.127144"], ["updated_at", "2015-05-21 23:20:41.127144"], ["conversation_id", 5]]
+  [1m[35mUsersToConversation Load (0.4ms)[0m  SELECT  "users_to_conversations".* FROM "users_to_conversations" WHERE "users_to_conversations"."sender_id" = 1 AND "users_to_conversations"."recipient_id" = 1 AND "users_to_conversations"."conversation_id" = 5 LIMIT 1
+  [1m[36m (10.4ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 57ms (Views: 0.6ms | ActiveRecord: 15.1ms)
+
+
+Started POST "/conversations?remember_token=HYIOxljbFsVDXfFG1tP_RQ==" for 127.0.0.1 at 2015-05-22 02:20:45 +0300
+Processing by ConversationsController#create as */*
+  Parameters: {"recipient_phone"=>"79165730095", "remember_token"=>"HYIOxljbFsVDXfFG1tP_RQ=="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "a0727acffeb7b007ac696933f0d350a9326d1f80"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["phone", "+79165730095"]]
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mUsersToConversation Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users_to_conversations" WHERE ("users_to_conversations"."sender_id" = 1 AND "users_to_conversations"."recipient_id" = 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 11ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/conversations?remember_token=HYIOxljbFsVDXfFG1tP_RQ==" for 127.0.0.1 at 2015-05-22 02:20:59 +0300
+Processing by ConversationsController#index as */*
+  Parameters: {"remember_token"=>"HYIOxljbFsVDXfFG1tP_RQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "a0727acffeb7b007ac696933f0d350a9326d1f80"]]
+  [1m[35mConversation Load (0.5ms)[0m  SELECT "conversations".* FROM "conversations" INNER JOIN "users_to_conversations" ON "conversations"."id" = "users_to_conversations"."conversation_id" WHERE "users_to_conversations"."sender_id" = ?  [["sender_id", 1]]
+  [1m[36mMessage Load (0.5ms)[0m  [1mSELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  ORDER BY "messages"."created_at" DESC LIMIT 1[0m  [["conversation_id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1  [["conversation_id", 1]]
+  Rendered shared/_user_box.json.jbuilder (0.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."recipient_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1[0m  [["conversation_id", 1]]
+  Rendered shared/_user_box.json.jbuilder (0.4ms)
+  [1m[35mMessage Load (0.3ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  ORDER BY "messages"."created_at" DESC LIMIT 1  [["conversation_id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1[0m  [["conversation_id", 2]]
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."recipient_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1  [["conversation_id", 2]]
+  Rendered shared/_user_box.json.jbuilder (0.3ms)
+  [1m[36mMessage Load (0.6ms)[0m  [1mSELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  ORDER BY "messages"."created_at" DESC LIMIT 1[0m  [["conversation_id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1  [["conversation_id", 3]]
+  Rendered shared/_user_box.json.jbuilder (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."recipient_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1[0m  [["conversation_id", 3]]
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  [1m[35mMessage Load (0.3ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  ORDER BY "messages"."created_at" DESC LIMIT 1  [["conversation_id", 5]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1[0m  [["conversation_id", 5]]
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."recipient_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1  [["conversation_id", 5]]
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  Rendered conversations/index.json.jbuilder (115.9ms)
+Completed 200 OK in 149ms (Views: 125.3ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/conversations/3?remember_token=ieCybVmyEzIhIzYZex1NKA==" for 127.0.0.1 at 2015-05-22 02:23:32 +0300
+Processing by ConversationsController#show as */*
+  Parameters: {"remember_token"=>"ieCybVmyEzIhIzYZex1NKA==", "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "ae74df001cf534b81d8e4d39670aa9a60a1b41bb"]]
+  [1m[35mConversation Load (0.5ms)[0m  SELECT  "conversations".* FROM "conversations" INNER JOIN "users_to_conversations" ON "conversations"."id" = "users_to_conversations"."conversation_id" WHERE "users_to_conversations"."sender_id" = ? AND "conversations"."id" = ? LIMIT 1  [["sender_id", 4], ["id", 3]]
+  [1m[36mMessage Load (0.4ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ? AND (delivered_at < '2015-05-21 23:23:32.413574')[0m  [["conversation_id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1  [["conversation_id", 3]]
+  Rendered shared/_user_box.json.jbuilder (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."recipient_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1[0m  [["conversation_id", 3]]
+  Rendered shared/_user_box.json.jbuilder (0.3ms)
+  Rendered conversations/show.json.jbuilder (17.2ms)
+Completed 200 OK in 37ms (Views: 26.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/conversations?remember_token=ieCybVmyEzIhIzYZex1NKA==" for 127.0.0.1 at 2015-05-22 02:23:40 +0300
+Processing by ConversationsController#index as */*
+  Parameters: {"remember_token"=>"ieCybVmyEzIhIzYZex1NKA=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "ae74df001cf534b81d8e4d39670aa9a60a1b41bb"]]
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "users_to_conversations" ON "conversations"."id" = "users_to_conversations"."conversation_id" WHERE "users_to_conversations"."sender_id" = ?[0m  [["sender_id", 4]]
+  [1m[35mMessage Load (0.3ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  ORDER BY "messages"."created_at" DESC LIMIT 1  [["conversation_id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1[0m  [["conversation_id", 3]]
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."recipient_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1  [["conversation_id", 3]]
+  Rendered shared/_user_box.json.jbuilder (0.3ms)
+  Rendered conversations/index.json.jbuilder (16.1ms)
+Completed 200 OK in 31ms (Views: 25.7ms | ActiveRecord: 1.2ms)
+  [1m[36mUsersToConversation Load (0.3ms)[0m  [1mSELECT  "users_to_conversations".* FROM "users_to_conversations"  ORDER BY "users_to_conversations"."id" DESC LIMIT 1[0m
+  [1m[35mUsersToConversation Load (0.3ms)[0m  SELECT  "users_to_conversations".* FROM "users_to_conversations"  ORDER BY "users_to_conversations"."id" DESC LIMIT 1
+  [1m[36mSQL (10.6ms)[0m  [1mDELETE FROM "users_to_conversations" WHERE "users_to_conversations"."id" = ?[0m  [["id", 9]]
+
+
+Started POST "/conversations?remember_token=HYIOxljbFsVDXfFG1tP_RQ==" for 127.0.0.1 at 2015-05-22 02:29:04 +0300
+Processing by ConversationsController#create as */*
+  Parameters: {"recipient_phone"=>"79165730095", "remember_token"=>"HYIOxljbFsVDXfFG1tP_RQ=="}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "a0727acffeb7b007ac696933f0d350a9326d1f80"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."phone" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["phone", "+79165730095"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUsersToConversation Exists (0.2ms)[0m  SELECT  1 AS one FROM "users_to_conversations" WHERE ("users_to_conversations"."sender_id" = 1 AND "users_to_conversations"."recipient_id" = 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 48ms (Views: 0.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/conversations?remember_token=ieCybVmyEzIhIzYZex1NKA==" for 127.0.0.1 at 2015-05-22 02:29:17 +0300
+Processing by ConversationsController#index as */*
+  Parameters: {"remember_token"=>"ieCybVmyEzIhIzYZex1NKA=="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "ae74df001cf534b81d8e4d39670aa9a60a1b41bb"]]
+  [1m[36mConversation Load (0.5ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "users_to_conversations" ON "conversations"."id" = "users_to_conversations"."conversation_id" WHERE "users_to_conversations"."sender_id" = ?[0m  [["sender_id", 4]]
+  [1m[35mMessage Load (0.6ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  ORDER BY "messages"."created_at" DESC LIMIT 1  [["conversation_id", 3]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1[0m  [["conversation_id", 3]]
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."recipient_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1  [["conversation_id", 3]]
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  Rendered conversations/index.json.jbuilder (72.5ms)
+Completed 200 OK in 123ms (Views: 86.8ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/conversations?remember_token=ieCybVmyEzIhIzYZex1NKA==" for 127.0.0.1 at 2015-05-22 02:30:40 +0300
+Processing by ConversationsController#index as */*
+  Parameters: {"remember_token"=>"ieCybVmyEzIhIzYZex1NKA=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "ae74df001cf534b81d8e4d39670aa9a60a1b41bb"]]
+  [1m[35mConversation Load (0.4ms)[0m  SELECT "conversations".* FROM "conversations" INNER JOIN "users_to_conversations" ON "conversations"."id" = "users_to_conversations"."conversation_id" WHERE "users_to_conversations"."sender_id" = ?  [["sender_id", 4]]
+  [1m[36mMessage Load (0.5ms)[0m  [1mSELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  ORDER BY "messages"."created_at" DESC LIMIT 1[0m  [["conversation_id", 3]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1  [["conversation_id", 3]]
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."recipient_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1[0m  [["conversation_id", 3]]
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  Rendered conversations/index.json.jbuilder (61.6ms)
+Completed 200 OK in 120ms (Views: 73.0ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/conversations?remember_token=ieCybVmyEzIhIzYZex1NKA==" for 127.0.0.1 at 2015-05-22 02:30:41 +0300
+Processing by ConversationsController#index as */*
+  Parameters: {"remember_token"=>"ieCybVmyEzIhIzYZex1NKA=="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "ae74df001cf534b81d8e4d39670aa9a60a1b41bb"]]
+  [1m[36mConversation Load (0.1ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "users_to_conversations" ON "conversations"."id" = "users_to_conversations"."conversation_id" WHERE "users_to_conversations"."sender_id" = ?[0m  [["sender_id", 4]]
+  [1m[35mMessage Load (0.2ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  ORDER BY "messages"."created_at" DESC LIMIT 1  [["conversation_id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1[0m  [["conversation_id", 3]]
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."recipient_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1  [["conversation_id", 3]]
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  Rendered conversations/index.json.jbuilder (11.8ms)
+Completed 200 OK in 26ms (Views: 19.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/conversations?remember_token=ieCybVmyEzIhIzYZex1NKA==" for 127.0.0.1 at 2015-05-22 02:32:32 +0300
+Processing by ConversationsController#index as */*
+  Parameters: {"remember_token"=>"ieCybVmyEzIhIzYZex1NKA=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "ae74df001cf534b81d8e4d39670aa9a60a1b41bb"]]
+  [1m[35mConversation Load (0.3ms)[0m  SELECT "conversations".* FROM "conversations" INNER JOIN "users_to_conversations" ON "conversations"."id" = "users_to_conversations"."conversation_id" WHERE "users_to_conversations"."sender_id" = ?  [["sender_id", 4]]
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  ORDER BY "messages"."created_at" DESC LIMIT 1[0m  [["conversation_id", 3]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" INNER JOIN "conversations" ON "users_to_conversations"."conversation_id" = "conversations"."id" WHERE "conversations"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1[0m  [["conversation_id", 3]]
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."recipient_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1  [["conversation_id", 3]]
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  Rendered conversations/index.json.jbuilder (47.4ms)
+Completed 200 OK in 91ms (Views: 54.9ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/conversations?remember_token=HYIOxljbFsVDXfFG1tP_RQ==" for 127.0.0.1 at 2015-05-22 02:33:49 +0300
+Processing by ConversationsController#create as */*
+  Parameters: {"recipient_phone"=>"79165730095", "remember_token"=>"HYIOxljbFsVDXfFG1tP_RQ=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "a0727acffeb7b007ac696933f0d350a9326d1f80"]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."phone" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["phone", "+79165730095"]]
+  [1m[36m (0.6ms)[0m  [1mbegin transaction[0m
+  [1m[35mUsersToConversation Exists (0.5ms)[0m  SELECT  1 AS one FROM "users_to_conversations" WHERE ("users_to_conversations"."sender_id" = 1 AND "users_to_conversations"."recipient_id" = 1) LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 28ms (Views: 0.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/conversations?remember_token=ieCybVmyEzIhIzYZex1NKA==" for 127.0.0.1 at 2015-05-22 02:33:55 +0300
+Processing by ConversationsController#index as */*
+  Parameters: {"remember_token"=>"ieCybVmyEzIhIzYZex1NKA=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "ae74df001cf534b81d8e4d39670aa9a60a1b41bb"]]
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "users_to_conversations" ON "conversations"."id" = "users_to_conversations"."conversation_id" WHERE "users_to_conversations"."sender_id" = ?[0m  [["sender_id", 4]]
+  [1m[35mMessage Load (0.6ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  ORDER BY "messages"."created_at" DESC LIMIT 1  [["conversation_id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" INNER JOIN "conversations" ON "users_to_conversations"."conversation_id" = "conversations"."id" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1  [["conversation_id", 3]]
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."recipient_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1[0m  [["conversation_id", 3]]
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  Rendered conversations/index.json.jbuilder (16.9ms)
+Completed 200 OK in 27ms (Views: 22.7ms | ActiveRecord: 1.7ms)
+  [1m[36mConversation Load (2.4ms)[0m  [1mSELECT "conversations".* FROM "conversations"[0m
+  [1m[35mConversation Load (0.4ms)[0m  SELECT "conversations".* FROM "conversations"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1[0m  [["conversation_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1  [["conversation_id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1[0m  [["conversation_id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1  [["conversation_id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1[0m  [["conversation_id", 5]]
+  [1m[35mConversation Load (0.4ms)[0m  SELECT "conversations".* FROM "conversations"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1[0m  [["conversation_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1  [["conversation_id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1[0m  [["conversation_id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1  [["conversation_id", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1[0m  [["conversation_id", 5]]
+  [1m[35mConversation Load (0.5ms)[0m  SELECT  "conversations".* FROM "conversations"  ORDER BY "conversations"."id" DESC LIMIT 1
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT  "conversations".* FROM "conversations"  ORDER BY "conversations"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1  [["conversation_id", 5]]
+  [1m[36mConversation Load (0.4ms)[0m  [1mSELECT  "conversations".* FROM "conversations"  ORDER BY "conversations"."id" DESC LIMIT 1[0m
+  [1m[35mSQL (22.8ms)[0m  DELETE FROM "conversations" WHERE "conversations"."id" = ?  [["id", 5]]
+  [1m[36mConversation Load (0.4ms)[0m  [1mSELECT  "conversations".* FROM "conversations"  ORDER BY "conversations"."id" DESC LIMIT 1[0m
+  [1m[35mSQL (18.3ms)[0m  DELETE FROM "conversations" WHERE "conversations"."id" = ?  [["id", 4]]
+
+
+Started GET "/conversations?remember_token=ieCybVmyEzIhIzYZex1NKA==" for 127.0.0.1 at 2015-05-22 02:38:14 +0300
+Processing by ConversationsController#index as */*
+  Parameters: {"remember_token"=>"ieCybVmyEzIhIzYZex1NKA=="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "ae74df001cf534b81d8e4d39670aa9a60a1b41bb"]]
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "users_to_conversations" ON "conversations"."id" = "users_to_conversations"."conversation_id" WHERE "users_to_conversations"."sender_id" = ?[0m  [["sender_id", 4]]
+  [1m[35mMessage Load (0.3ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  ORDER BY "messages"."created_at" DESC LIMIT 1  [["conversation_id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" INNER JOIN "conversations" ON "users_to_conversations"."conversation_id" = "conversations"."id" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1  [["conversation_id", 3]]
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."recipient_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1[0m  [["conversation_id", 3]]
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  Rendered conversations/index.json.jbuilder (14.9ms)
+Completed 200 OK in 33ms (Views: 23.9ms | ActiveRecord: 1.4ms)
+  [1m[36mConversation Load (0.4ms)[0m  [1mSELECT  "conversations".* FROM "conversations"  ORDER BY "conversations"."id" DESC LIMIT 1[0m
+  [1m[35mConversation Load (0.4ms)[0m  SELECT  "conversations".* FROM "conversations"  ORDER BY "conversations"."id" DESC LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1[0m  [["conversation_id", 3]]
+  [1m[35mConversation Load (0.4ms)[0m  SELECT  "conversations".* FROM "conversations"  ORDER BY "conversations"."id" DESC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."recipient_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1[0m  [["conversation_id", 3]]
+
+
+Started GET "/conversations?remember_token=ieCybVmyEzIhIzYZex1NKA==" for 127.0.0.1 at 2015-05-22 02:41:59 +0300
+Processing by ConversationsController#index as */*
+  Parameters: {"remember_token"=>"ieCybVmyEzIhIzYZex1NKA=="}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "ae74df001cf534b81d8e4d39670aa9a60a1b41bb"]]
+  [1m[36mConversation Load (0.5ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "users_to_conversations" ON "conversations"."id" = "users_to_conversations"."conversation_id" WHERE "users_to_conversations"."sender_id" = ?[0m  [["sender_id", 4]]
+  [1m[35mMessage Load (0.5ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  ORDER BY "messages"."created_at" DESC LIMIT 1  [["conversation_id", 3]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" INNER JOIN "conversations" ON "users_to_conversations"."conversation_id" = "conversations"."id" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1  [["conversation_id", 3]]
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."recipient_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1[0m  [["conversation_id", 3]]
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  Rendered conversations/index.json.jbuilder (62.8ms)
+Completed 200 OK in 121ms (Views: 74.9ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/conversations?remember_token=ieCybVmyEzIhIzYZex1NKA==" for 127.0.0.1 at 2015-05-22 02:43:00 +0300
+Processing by ConversationsController#index as */*
+  Parameters: {"remember_token"=>"ieCybVmyEzIhIzYZex1NKA=="}
+  [1m[35mUser Load (3.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "ae74df001cf534b81d8e4d39670aa9a60a1b41bb"]]
+  [1m[36mConversation Load (0.3ms)[0m  [1mSELECT "conversations".* FROM "conversations" INNER JOIN "users_to_conversations" ON "conversations"."id" = "users_to_conversations"."conversation_id" WHERE "users_to_conversations"."sender_id" = ?[0m  [["sender_id", 4]]
+  [1m[35mMessage Load (0.3ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  ORDER BY "messages"."created_at" DESC LIMIT 1  [["conversation_id", 3]]
+  Rendered conversations/index.json.jbuilder (30.7ms)
+Completed 500 Internal Server Error in 115ms
+
+ActionView::Template::Error (Could not find the source association(s) "sender" or :sender in model Conversation. Try 'has_many :sender, :through => :conversation, :source => <name>'. Is it one of users_to_conversation or messages?):
+    3:   json.last_message do
+    4:     last_message = conversation.messages.order(created_at: :desc).first
+    5:     json.extract! last_message, :id, :title, :body
+    6:     json.own last_message.sender == current_user
+    7:   end
+    8: 
+    9:   json.sender do
+  app/views/conversations/index.json.jbuilder:6:in `block (2 levels) in _app_views_conversations_index_json_jbuilder___241931840010178869_36453180'
+  app/views/conversations/index.json.jbuilder:3:in `block in _app_views_conversations_index_json_jbuilder___241931840010178869_36453180'
+  app/views/conversations/index.json.jbuilder:1:in `_app_views_conversations_index_json_jbuilder___241931840010178869_36453180'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (48.2ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (33.9ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.2ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (65.8ms)
+
+
+Started GET "/conversations?remember_token=ieCybVmyEzIhIzYZex1NKA==" for 127.0.0.1 at 2015-05-22 02:45:28 +0300
+Processing by ConversationsController#index as */*
+  Parameters: {"remember_token"=>"ieCybVmyEzIhIzYZex1NKA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "ae74df001cf534b81d8e4d39670aa9a60a1b41bb"]]
+  [1m[35mConversation Load (0.3ms)[0m  SELECT "conversations".* FROM "conversations" INNER JOIN "users_to_conversations" ON "conversations"."id" = "users_to_conversations"."conversation_id" WHERE "users_to_conversations"."sender_id" = ?  [["sender_id", 4]]
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  ORDER BY "messages"."created_at" DESC LIMIT 1[0m  [["conversation_id", 3]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" INNER JOIN "conversations" ON "users_to_conversations"."conversation_id" = "conversations"."id" WHERE "conversations"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1[0m  [["conversation_id", 3]]
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."recipient_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1  [["conversation_id", 3]]
+  Rendered shared/_user_box.json.jbuilder (0.4ms)
+  Rendered conversations/index.json.jbuilder (54.1ms)
+Completed 200 OK in 98ms (Views: 62.0ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/conversations?remember_token=ieCybVmyEzIhIzYZex1NKA==" for 127.0.0.1 at 2015-05-22 02:47:06 +0300
+Processing by ConversationsController#index as */*
+  Parameters: {"remember_token"=>"ieCybVmyEzIhIzYZex1NKA=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "ae74df001cf534b81d8e4d39670aa9a60a1b41bb"]]
+Completed 500 Internal Server Error in 310ms
+
+ArgumentError (wrong number of arguments (1 for 2)):
+  app/models/conversation.rb:13:in `block in <class:Conversation>'
+  app/controllers/conversations_controller.rb:5:in `index'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.8ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (28.1ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (55.4ms)
+
+
+Started POST "/conversations?remember_token=HYIOxljbFsVDXfFG1tP_RQ==" for 127.0.0.1 at 2015-05-22 02:48:38 +0300
+Processing by ConversationsController#create as */*
+  Parameters: {"recipient_phone"=>"79165730095", "remember_token"=>"HYIOxljbFsVDXfFG1tP_RQ=="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "a0727acffeb7b007ac696933f0d350a9326d1f80"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["phone", "+79165730095"]]
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mUsersToConversation Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users_to_conversations" WHERE ("users_to_conversations"."sender_id" = 1 AND "users_to_conversations"."recipient_id" = 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 40ms (Views: 0.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/conversations?remember_token=ieCybVmyEzIhIzYZex1NKA==" for 127.0.0.1 at 2015-05-22 02:48:42 +0300
+Processing by ConversationsController#index as */*
+  Parameters: {"remember_token"=>"ieCybVmyEzIhIzYZex1NKA=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "ae74df001cf534b81d8e4d39670aa9a60a1b41bb"]]
+  [1m[35mConversation Load (0.3ms)[0m  SELECT "conversations".* FROM "conversations" INNER JOIN "users_to_conversations" ON "users_to_conversations"."conversation_id" = "conversations"."id" WHERE "users_to_conversations"."sender_id" = ?  [["sender_id", 4]]
+  [1m[36mMessage Load (0.5ms)[0m  [1mSELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  ORDER BY "messages"."created_at" DESC LIMIT 1[0m  [["conversation_id", 3]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" INNER JOIN "conversations" ON "users_to_conversations"."conversation_id" = "conversations"."id" WHERE "conversations"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."sender_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1[0m  [["conversation_id", 3]]
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "users_to_conversations" ON "users"."id" = "users_to_conversations"."recipient_id" WHERE "users_to_conversations"."conversation_id" = ? LIMIT 1  [["conversation_id", 3]]
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  Rendered conversations/index.json.jbuilder (40.8ms)
+Completed 200 OK in 61ms (Views: 48.6ms | ActiveRecord: 2.9ms)
+  [1m[36m (9.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (8.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20150410124620)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "phone" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150410124620"]]
+  [1m[35m (7.9ms)[0m  commit transaction
+Migrating to AddIndexToUsers (20150416161223)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "remember_token" varchar
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150416161223"]]
+  [1m[35m (8.0ms)[0m  commit transaction
+Migrating to CreateContactRelations (20150421095020)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "contact_relations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150421095020"]]
+  [1m[35m (11.0ms)[0m  commit transaction
+Migrating to AddColumnsToContactRelation (20150421095958)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "contact_relations" ADD "user_id" integer
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "contact_relations" ADD "contact_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150421095958"]]
+  [1m[36m (8.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateConversations (20150503235336)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150503235336"]]
+  [1m[36m (8.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateMessages (20150503235958)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150503235958"]]
+  [1m[36m (8.6ms)[0m  [1mcommit transaction[0m
+Migrating to AddColumnsToMessage (20150504000045)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "messages" ADD "conversation_id" integer[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "messages" ADD "title" varchar
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "messages" ADD "body" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150504000045"]]
+  [1m[36m (11.6ms)[0m  [1mcommit transaction[0m
+Migrating to AddDeliveredAtToMessage (20150521230655)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "messages" ADD "delivered_at" datetime[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150521230655"]]
+  [1m[36m (8.2ms)[0m  [1mcommit transaction[0m
+Migrating to AddUsersToConversation (20150521235937)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "conversations" ADD "sender_id" integer[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "conversations" ADD "recipient_id" integer
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150521235937"]]
+  [1m[35m (8.9ms)[0m  commit transaction
+Migrating to AddUsersToMessage (20150521235946)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "messages" ADD "sender_id" integer
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "messages" ADD "recipient_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150521235946"]]
+  [1m[36m (8.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started POST "/login?phone=79165730095" for 127.0.0.1 at 2015-05-22 03:09:10 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#create as */*
+  Parameters: {"phone"=>"79165730095"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1  [["phone", "+79165730095"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("phone", "created_at", "updated_at", "remember_token") VALUES (?, ?, ?, ?)  [["phone", "+79165730095"], ["created_at", "2015-05-22 00:09:10.884985"], ["updated_at", "2015-05-22 00:09:10.884985"], ["remember_token", "da2147789679a9f20c2f283f40a4297dbdd48ccb"]]
+  [1m[36m (8.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"], ["updated_at", "2015-05-22 00:09:10.898411"], ["id", 1]]
+  [1m[35m (7.7ms)[0m  commit transaction
+Completed 201 Created in 84ms (Views: 0.5ms | ActiveRecord: 18.5ms)
+
+
+Started GET "/conversations?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:09:29 +0300
+Processing by ConversationsController#index as */*
+  Parameters: {"remember_token"=>"plAYo59jdJK1PKHKUwYhgA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[35mConversation Load (0.4ms)[0m  SELECT "conversations".* FROM "conversations" WHERE (conversations.sender_id = 1 or conversations.recipient_id = 1)
+  Rendered conversations/index.json.jbuilder (3.8ms)
+Completed 200 OK in 60ms (Views: 29.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/conversations?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:09:37 +0300
+Processing by ConversationsController#create as */*
+  Parameters: {"remember_token"=>"plAYo59jdJK1PKHKUwYhgA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+Completed 500 Internal Server Error in 8ms
+
+NameError (uninitialized constant ConversationsController::UsersToConversation):
+  app/controllers/conversations_controller.rb:20:in `create'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.0ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (28.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (61.2ms)
+
+
+Started POST "/conversations?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:21:13 +0300
+Processing by ConversationsController#create as */*
+  Parameters: {"remember_token"=>"plAYo59jdJK1PKHKUwYhgA=="}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 73ms
+
+NoMethodError (undefined method `users_uniqueness' for #<Conversation:0x007fe558df3aa0>):
+  app/controllers/conversations_controller.rb:22:in `create'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.8ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (25.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (52.9ms)
+
+
+Started POST "/conversations?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:21:30 +0300
+Processing by ConversationsController#create as */*
+  Parameters: {"remember_token"=>"plAYo59jdJK1PKHKUwYhgA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 41ms
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/models/conversation.rb:18:in `block in <class:Conversation>'
+  app/models/conversation.rb:38:in `users_uniqueness'
+  app/controllers/conversations_controller.rb:22:in `create'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.8ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (25.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (52.0ms)
+
+
+Started POST "/conversations?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:23:14 +0300
+Processing by ConversationsController#create as */*
+  Parameters: {"remember_token"=>"plAYo59jdJK1PKHKUwYhgA=="}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+Completed 422 Unprocessable Entity in 16ms (Views: 0.3ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2015-05-22 03:24:01 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"phone"=>"71234567890"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ? LIMIT 1[0m  [["phone", "+71234567890"]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("phone", "created_at", "updated_at", "remember_token") VALUES (?, ?, ?, ?)[0m  [["phone", "+71234567890"], ["created_at", "2015-05-22 00:24:01.403096"], ["updated_at", "2015-05-22 00:24:01.403096"], ["remember_token", "b9c7bcc46687c99c57117b41839f71dca289a57e"]]
+  [1m[35m (8.4ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "remember_token" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["remember_token", "1f759dc2be4ed20b959275825eed4208e3a78d2e"], ["updated_at", "2015-05-22 00:24:01.416327"], ["id", 2]]
+  [1m[36m (8.2ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 31ms (Views: 0.4ms | ActiveRecord: 18.1ms)
+
+
+Started POST "/conversations" for 127.0.0.1 at 2015-05-22 03:24:17 +0300
+Processing by ConversationsController#create as */*
+  Parameters: {"remember_token"=>"fScZXy6Hnq-5Iic4tFgepA=="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "1f759dc2be4ed20b959275825eed4208e3a78d2e"]]
+Completed 422 Unprocessable Entity in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/conversations" for 127.0.0.1 at 2015-05-22 03:24:19 +0300
+Processing by ConversationsController#create as */*
+  Parameters: {"remember_token"=>"fScZXy6Hnq-5Iic4tFgepA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "1f759dc2be4ed20b959275825eed4208e3a78d2e"]]
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/conversations?remember_token=fScZXy6Hnq-5Iic4tFgepA==" for 127.0.0.1 at 2015-05-22 03:24:39 +0300
+Processing by ConversationsController#index as */*
+  Parameters: {"remember_token"=>"fScZXy6Hnq-5Iic4tFgepA=="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "1f759dc2be4ed20b959275825eed4208e3a78d2e"]]
+  [1m[36mConversation Load (0.3ms)[0m  [1mSELECT "conversations".* FROM "conversations" WHERE (conversations.sender_id = 2 or conversations.recipient_id = 2)[0m
+  Rendered conversations/index.json.jbuilder (1.8ms)
+Completed 200 OK in 29ms (Views: 15.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/conversations?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:25:18 +0300
+Processing by ConversationsController#create as */*
+  Parameters: {"recipient_phone"=>"71234567890", "remember_token"=>"plAYo59jdJK1PKHKUwYhgA=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["phone", "+71234567890"]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "conversations" WHERE ((conversations.sender_id = 1 and conversations.recipient_id = 2) or
+           (conversations.sender_id = 2 and conversations.recipient_id = 1))[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "conversations" ("sender_id", "recipient_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["sender_id", 1], ["recipient_id", 2], ["created_at", "2015-05-22 00:25:18.141249"], ["updated_at", "2015-05-22 00:25:18.141249"]]
+  [1m[36m (13.2ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 55ms
+
+NameError (undefined local variable or method `users_to_conversation' for #<ConversationsController:0x000000045a83c8>):
+  app/controllers/conversations_controller.rb:23:in `create'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.8ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x0000000717aeb0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x0000000717abe0 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x00000007187b88 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/conversations?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:25:36 +0300
+Processing by ConversationsController#create as */*
+  Parameters: {"recipient_phone"=>"71234567890", "remember_token"=>"plAYo59jdJK1PKHKUwYhgA=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["phone", "+71234567890"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "conversations" WHERE ((conversations.sender_id = 1 and conversations.recipient_id = 2) or
+           (conversations.sender_id = 2 and conversations.recipient_id = 1))[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 33ms
+
+NoMethodError (undefined method `there are the same conversation' for #<Conversation:0x007fe5598e1fc0>):
+  app/models/conversation.rb:38:in `users_uniqueness'
+  app/controllers/conversations_controller.rb:22:in `create'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.8ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x0000000717aeb0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x0000000717abe0 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x00000007187b88 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/conversations?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:26:03 +0300
+Processing by ConversationsController#create as */*
+  Parameters: {"recipient_phone"=>"71234567890", "remember_token"=>"plAYo59jdJK1PKHKUwYhgA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."phone" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["phone", "+71234567890"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "conversations" WHERE ((conversations.sender_id = 1 and conversations.recipient_id = 2) or
+           (conversations.sender_id = 2 and conversations.recipient_id = 1))
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 42ms
+
+NoMethodError (undefined method `to_sym' for #<Conversation:0x007fe55a042198>):
+  app/models/conversation.rb:38:in `users_uniqueness'
+  app/controllers/conversations_controller.rb:22:in `create'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.2ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.1ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x0000000717aeb0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x0000000717abe0 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x00000007187b88 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/conversations?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:26:15 +0300
+Processing by ConversationsController#create as */*
+  Parameters: {"recipient_phone"=>"71234567890", "remember_token"=>"plAYo59jdJK1PKHKUwYhgA=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["phone", "+71234567890"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "conversations" WHERE ((conversations.sender_id = 1 and conversations.recipient_id = 2) or
+           (conversations.sender_id = 2 and conversations.recipient_id = 1))[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 33ms (Views: 0.4ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/conversations?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:26:30 +0300
+Processing by ConversationsController#create as */*
+  Parameters: {"recipient_phone"=>"71234567890", "remember_token"=>"plAYo59jdJK1PKHKUwYhgA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."phone" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["phone", "+71234567890"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "conversations" WHERE ((conversations.sender_id = 1 and conversations.recipient_id = 2) or
+           (conversations.sender_id = 2 and conversations.recipient_id = 1))
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 44ms (Views: 0.3ms | ActiveRecord: 3.0ms)
+  [1m[36mConversation Load (2.8ms)[0m  [1mSELECT "conversations".* FROM "conversations"[0m
+
+
+Started POST "/messages?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:27:36 +0300
+Processing by MessagesController#create as */*
+  Parameters: {"recipient_phone"=>"71234567890", "remember_token"=>"plAYo59jdJK1PKHKUwYhgA=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[36mConversation Load (0.3ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" IS NULL  ORDER BY "conversations"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."phone" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["phone", "+71234567890"]]
+  [1m[36mConversation Load (0.4ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE ((conversations.sender_id = 1 and conversations.recipient_id = 2) or
+           (conversations.sender_id = 2 and conversations.recipient_id = 1))  ORDER BY "conversations"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Unpermitted parameters: recipient_phone, remember_token
+Completed 500 Internal Server Error in 68ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute 'time' for Message.):
+  app/controllers/messages_controller.rb:9:in `create'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.4ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.1ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x0000000717aeb0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x0000000717abe0 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x00000007187b88 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/messages?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:28:21 +0300
+Processing by MessagesController#create as */*
+  Parameters: {"recipient_phone"=>"71234567890", "remember_token"=>"plAYo59jdJK1PKHKUwYhgA=="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" IS NULL  ORDER BY "conversations"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."phone" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["phone", "+71234567890"]]
+  [1m[36mConversation Load (0.3ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE ((conversations.sender_id = 1 and conversations.recipient_id = 2) or
+           (conversations.sender_id = 2 and conversations.recipient_id = 1))  ORDER BY "conversations"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Unpermitted parameters: recipient_phone, remember_token
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 72ms
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/models/message.rb:10:in `check_conversation_sender_recipient'
+  app/controllers/messages_controller.rb:11:in `create'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.8ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.7ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x0000000717aeb0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x0000000717abe0 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x00000007187b88 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/messages?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:32:17 +0300
+Processing by MessagesController#create as */*
+  Parameters: {"recipient_phone"=>"71234567890", "remember_token"=>"plAYo59jdJK1PKHKUwYhgA=="}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" IS NULL  ORDER BY "conversations"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."phone" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["phone", "+71234567890"]]
+  [1m[36mConversation Load (0.8ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE ((conversations.sender_id = 1 and conversations.recipient_id = 2) or
+           (conversations.sender_id = 2 and conversations.recipient_id = 1))  ORDER BY "conversations"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Unpermitted parameters: recipient_phone, remember_token, sender_id, recipient_id
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 71ms
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/models/message.rb:10:in `check_conversation_sender_recipient'
+  app/controllers/messages_controller.rb:11:in `create'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.5ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x0000000717aeb0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x0000000717abe0 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x00000007187b88 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/messages?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:33:09 +0300
+Processing by MessagesController#create as */*
+  Parameters: {"recipient_phone"=>"71234567890", "remember_token"=>"plAYo59jdJK1PKHKUwYhgA=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" IS NULL  ORDER BY "conversations"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."phone" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["phone", "+71234567890"]]
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE ((conversations.sender_id = 1 and conversations.recipient_id = 2) or
+           (conversations.sender_id = 2 and conversations.recipient_id = 1))  ORDER BY "conversations"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Unpermitted parameters: recipient_phone, remember_token, sender_id, recipient_id
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 12ms
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/models/message.rb:10:in `check_conversation_sender_recipient'
+  app/controllers/messages_controller.rb:11:in `create'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.8ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.3ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x0000000717aeb0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x0000000717abe0 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x00000007187b88 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+  [1m[35mMessage Load (0.3ms)[0m  SELECT "messages".* FROM "messages"
+  [1m[36mConversation Load (0.3ms)[0m  [1mSELECT "conversations".* FROM "conversations"[0m
+  [1m[35mConversation Load (0.5ms)[0m  SELECT  "conversations".* FROM "conversations"  ORDER BY "conversations"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mConversation Load (0.4ms)[0m  SELECT  "conversations".* FROM "conversations"  ORDER BY "conversations"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+
+
+Started POST "/messages?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:33:59 +0300
+Processing by MessagesController#create as */*
+  Parameters: {"recipient_phone"=>"71234567890", "remember_token"=>"plAYo59jdJK1PKHKUwYhgA=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" IS NULL  ORDER BY "conversations"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."phone" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["phone", "+71234567890"]]
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE ((conversations.sender_id = 1 and conversations.recipient_id = 2) or
+           (conversations.sender_id = 2 and conversations.recipient_id = 1))  ORDER BY "conversations"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Unpermitted parameters: recipient_phone, remember_token, sender_id, recipient_id
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 62ms
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/models/message.rb:11:in `check_conversation_sender_recipient'
+  app/controllers/messages_controller.rb:11:in `create'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.1ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.7ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x0000000717aeb0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x0000000717abe0 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x00000007187b88 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/messages?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:34:51 +0300
+Processing by MessagesController#create as */*
+  Parameters: {"recipient_phone"=>"71234567890", "remember_token"=>"plAYo59jdJK1PKHKUwYhgA=="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" IS NULL  ORDER BY "conversations"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."phone" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["phone", "+71234567890"]]
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE ((conversations.sender_id = 1 and conversations.recipient_id = 2) or
+           (conversations.sender_id = 2 and conversations.recipient_id = 1))  ORDER BY "conversations"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Unpermitted parameters: recipient_phone, remember_token, sender_id, recipient_id
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 60ms (Views: 0.5ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/messages?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:35:12 +0300
+Processing by MessagesController#create as */*
+  Parameters: {"recipient_phone"=>"71234567890", "remember_token"=>"plAYo59jdJK1PKHKUwYhgA=="}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[36mConversation Load (0.3ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" IS NULL  ORDER BY "conversations"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."phone" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["phone", "+71234567890"]]
+  [1m[36mConversation Load (0.4ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE ((conversations.sender_id = 1 and conversations.recipient_id = 2) or
+           (conversations.sender_id = 2 and conversations.recipient_id = 1))  ORDER BY "conversations"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Unpermitted parameters: recipient_phone, remember_token, sender_id, recipient_id
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 84ms (Views: 0.3ms | ActiveRecord: 7.1ms)
+
+
+Started POST "/messages?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:35:53 +0300
+Processing by MessagesController#create as */*
+  Parameters: {"recipient_phone"=>"71234567890", "title"=>"ololo", "body"=>"olololo", "remember_token"=>"plAYo59jdJK1PKHKUwYhgA=="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[36mConversation Load (0.4ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" IS NULL  ORDER BY "conversations"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."phone" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["phone", "+71234567890"]]
+  [1m[36mConversation Load (0.5ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE ((conversations.sender_id = 1 and conversations.recipient_id = 2) or
+           (conversations.sender_id = 2 and conversations.recipient_id = 1))  ORDER BY "conversations"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Unpermitted parameters: recipient_phone, remember_token, sender_id, recipient_id
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "messages" ("title", "body", "delivered_at", "conversation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "ololo"], ["body", "olololo"], ["delivered_at", "2015-05-22 00:36:53.995503"], ["conversation_id", 1], ["created_at", "2015-05-22 00:35:54.000815"], ["updated_at", "2015-05-22 00:35:54.000815"]]
+  [1m[35m (9.6ms)[0m  commit transaction
+Completed 201 Created in 36ms (Views: 0.7ms | ActiveRecord: 13.8ms)
+
+
+Started GET "/conversations?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:36:12 +0300
+Processing by ConversationsController#index as */*
+  Parameters: {"remember_token"=>"plAYo59jdJK1PKHKUwYhgA=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[35mConversation Load (0.4ms)[0m  SELECT "conversations".* FROM "conversations" WHERE (conversations.sender_id = 1 or conversations.recipient_id = 1)
+  [1m[36mMessage Load (0.5ms)[0m  [1mSELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?  ORDER BY "messages"."created_at" DESC LIMIT 1[0m  [["conversation_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered shared/_user_box.json.jbuilder (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  Rendered conversations/index.json.jbuilder (19.8ms)
+Completed 200 OK in 39ms (Views: 33.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/conversations/1?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:36:20 +0300
+Processing by ConversationsController#show as */*
+  Parameters: {"remember_token"=>"plAYo59jdJK1PKHKUwYhgA==", "id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+Completed 500 Internal Server Error in 4ms
+
+NoMethodError (undefined method `conversations' for #<User:0x00000002bf37c0>):
+  app/controllers/conversations_controller.rb:9:in `show'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (33.4ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (25.4ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (53.1ms)
+
+
+Started GET "/conversations/1?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:41:16 +0300
+Processing by ConversationsController#show as */*
+  Parameters: {"remember_token"=>"plAYo59jdJK1PKHKUwYhgA==", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+Completed 500 Internal Server Error in 35ms
+
+NameError (uninitialized constant ConversationsController::Conversations):
+  app/controllers/conversations_controller.rb:9:in `show'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.8ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (41.2ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (27.0ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (53.8ms)
+
+
+Started GET "/conversations/1?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:41:34 +0300
+Processing by ConversationsController#show as */*
+  Parameters: {"remember_token"=>"plAYo59jdJK1PKHKUwYhgA==", "id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[36mConversation Load (0.6ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mMessage Load (0.3ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ? AND (delivered_at < '2015-05-22 00:41:34.932699')  [["conversation_id", 1]]
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  Rendered conversations/show.json.jbuilder (18.2ms)
+Completed 200 OK in 120ms (Views: 44.8ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/conversations/1?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:42:22 +0300
+Processing by ConversationsController#show as */*
+  Parameters: {"remember_token"=>"plAYo59jdJK1PKHKUwYhgA==", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[35mConversation Load (0.1ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ? AND (delivered_at < '2015-05-22 00:42:22.088645')[0m  [["conversation_id", 1]]
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  Rendered conversations/show.json.jbuilder (5.8ms)
+Completed 200 OK in 18ms (Views: 12.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/conversations/1?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:42:29 +0300
+Processing by ConversationsController#show as */*
+  Parameters: {"remember_token"=>"plAYo59jdJK1PKHKUwYhgA==", "id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mMessage Load (0.4ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ? AND (delivered_at < '2015-05-22 00:42:29.049693')  [["conversation_id", 1]]
+  Rendered conversations/show.json.jbuilder (8.7ms)
+Completed 500 Internal Server Error in 28ms
+
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: json.messages @messages do |message|
+    2:   json.extract! message, :id, :title, :body
+    3:   json.own message.sender.id == current_user.id
+    4: end
+    5: 
+    6: json.sender do
+  app/views/conversations/show.json.jbuilder:3:in `block in _app_views_conversations_show_json_jbuilder__2691341367577977414_70311513484820'
+  app/views/conversations/show.json.jbuilder:1:in `_app_views_conversations_show_json_jbuilder__2691341367577977414_70311513484820'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (39.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (28.4ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (55.6ms)
+
+
+Started GET "/conversations/1?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:42:46 +0300
+Processing by ConversationsController#show as */*
+  Parameters: {"remember_token"=>"plAYo59jdJK1PKHKUwYhgA==", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[35mConversation Load (0.1ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ? AND (delivered_at < '2015-05-22 00:42:46.765847')[0m  [["conversation_id", 1]]
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  Rendered conversations/show.json.jbuilder (6.3ms)
+Completed 200 OK in 18ms (Views: 13.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/conversations/1?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:44:59 +0300
+Processing by ConversationsController#show as */*
+  Parameters: {"remember_token"=>"plAYo59jdJK1PKHKUwYhgA==", "id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[36mConversation Load (0.3ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mMessage Load (0.4ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ? AND (delivered_at < '2015-05-22 00:44:59.212006')  [["conversation_id", 1]]
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  Rendered conversations/show.json.jbuilder (18.8ms)
+Completed 200 OK in 80ms (Views: 30.8ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/messages/1?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:45:13 +0300
+
+ActionController::RoutingError (No route matches [POST] "/messages/1"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/shocoladka/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/shocoladka/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/shocoladka/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.8ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (16.3ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.6ms)
+  Rendered /home/shocoladka/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (77.5ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x0000000717aeb0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x0000000717abe0 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x00000007187b88 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/messages?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:45:25 +0300
+Processing by MessagesController#create as */*
+  Parameters: {"recipient_phone"=>"71234567890", "title"=>"ololo", "body"=>"olololo", "remember_token"=>"plAYo59jdJK1PKHKUwYhgA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[35mConversation Load (0.3ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" IS NULL  ORDER BY "conversations"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["phone", "+71234567890"]]
+  [1m[35mConversation Load (0.2ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE ((conversations.sender_id = 1 and conversations.recipient_id = 2) or
+           (conversations.sender_id = 2 and conversations.recipient_id = 1))  ORDER BY "conversations"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+Unpermitted parameters: recipient_phone, remember_token, sender, recipient
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 23ms (Views: 0.5ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/messages?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:45:57 +0300
+Processing by MessagesController#create as */*
+  Parameters: {"recipient_phone"=>"71234567890", "title"=>"ololo", "body"=>"olololo", "remember_token"=>"plAYo59jdJK1PKHKUwYhgA=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[35mConversation Load (0.2ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" IS NULL  ORDER BY "conversations"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."phone" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["phone", "+71234567890"]]
+  [1m[35mConversation Load (0.3ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE ((conversations.sender_id = 1 and conversations.recipient_id = 2) or
+           (conversations.sender_id = 2 and conversations.recipient_id = 1))  ORDER BY "conversations"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+Unpermitted parameters: recipient_phone, remember_token
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "messages" ("title", "body", "delivered_at", "sender_id", "recipient_id", "conversation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["title", "ololo"], ["body", "olololo"], ["delivered_at", "2015-05-22 00:46:57.861598"], ["sender_id", 1], ["recipient_id", 2], ["conversation_id", 1], ["created_at", "2015-05-22 00:45:57.875813"], ["updated_at", "2015-05-22 00:45:57.875813"]]
+  [1m[36m (9.3ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 65ms (Views: 0.6ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/conversations/1?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:46:13 +0300
+Processing by ConversationsController#show as */*
+  Parameters: {"remember_token"=>"plAYo59jdJK1PKHKUwYhgA==", "id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[36mConversation Load (0.5ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mMessage Load (0.5ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ? AND (delivered_at < '2015-05-22 00:46:13.526991')  [["conversation_id", 1]]
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  Rendered conversations/show.json.jbuilder (8.9ms)
+Completed 200 OK in 36ms (Views: 23.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/conversations/1?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:46:21 +0300
+Processing by ConversationsController#show as */*
+  Parameters: {"remember_token"=>"plAYo59jdJK1PKHKUwYhgA==", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[35mConversation Load (0.1ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ? AND (delivered_at < '2015-05-22 00:46:21.377742')[0m  [["conversation_id", 1]]
+  Rendered shared/_user_box.json.jbuilder (0.3ms)
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  Rendered conversations/show.json.jbuilder (6.1ms)
+Completed 200 OK in 17ms (Views: 12.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/conversations/1?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:46:22 +0300
+Processing by ConversationsController#show as */*
+  Parameters: {"remember_token"=>"plAYo59jdJK1PKHKUwYhgA==", "id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mMessage Load (0.5ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ? AND (delivered_at < '2015-05-22 00:46:22.504499')  [["conversation_id", 1]]
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  Rendered conversations/show.json.jbuilder (9.2ms)
+Completed 200 OK in 30ms (Views: 18.6ms | ActiveRecord: 1.3ms)
+  [1m[35mMessage Load (0.4ms)[0m  SELECT  "messages".* FROM "messages"  ORDER BY "messages"."id" ASC LIMIT 1
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT  "messages".* FROM "messages"  ORDER BY "messages"."id" ASC LIMIT 1[0m
+  [1m[35mSQL (9.3ms)[0m  DELETE FROM "messages" WHERE "messages"."id" = ?  [["id", 1]]
+
+
+Started GET "/conversations/1?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:46:35 +0300
+Processing by ConversationsController#show as */*
+  Parameters: {"remember_token"=>"plAYo59jdJK1PKHKUwYhgA==", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[35mConversation Load (0.2ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mMessage Load (0.4ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ? AND (delivered_at < '2015-05-22 00:46:35.271996')[0m  [["conversation_id", 1]]
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  Rendered conversations/show.json.jbuilder (7.9ms)
+Completed 200 OK in 27ms (Views: 17.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/conversations/1?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:46:39 +0300
+Processing by ConversationsController#show as */*
+  Parameters: {"remember_token"=>"plAYo59jdJK1PKHKUwYhgA==", "id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mMessage Load (0.4ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ? AND (delivered_at < '2015-05-22 00:46:39.049804')  [["conversation_id", 1]]
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  Rendered conversations/show.json.jbuilder (7.7ms)
+Completed 200 OK in 27ms (Views: 16.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/conversations/1?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:46:39 +0300
+Processing by ConversationsController#show as */*
+  Parameters: {"remember_token"=>"plAYo59jdJK1PKHKUwYhgA==", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[35mConversation Load (0.2ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ? AND (delivered_at < '2015-05-22 00:46:39.845583')[0m  [["conversation_id", 1]]
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  Rendered conversations/show.json.jbuilder (5.2ms)
+Completed 200 OK in 20ms (Views: 12.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/conversations/1?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:46:40 +0300
+Processing by ConversationsController#show as */*
+  Parameters: {"remember_token"=>"plAYo59jdJK1PKHKUwYhgA==", "id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mMessage Load (0.3ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ? AND (delivered_at < '2015-05-22 00:46:40.644928')  [["conversation_id", 1]]
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  Rendered conversations/show.json.jbuilder (6.2ms)
+Completed 200 OK in 20ms (Views: 13.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/conversations/1?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:47:12 +0300
+Processing by ConversationsController#show as */*
+  Parameters: {"remember_token"=>"plAYo59jdJK1PKHKUwYhgA==", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[35mConversation Load (0.2ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ? AND (delivered_at < '2015-05-22 00:47:12.055104')[0m  [["conversation_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  Rendered conversations/show.json.jbuilder (6.9ms)
+Completed 200 OK in 22ms (Views: 14.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/conversations/1?remember_token=plAYo59jdJK1PKHKUwYhgA==" for 127.0.0.1 at 2015-05-22 03:47:13 +0300
+Processing by ConversationsController#show as */*
+  Parameters: {"remember_token"=>"plAYo59jdJK1PKHKUwYhgA==", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "e440a0dd5586803928cf4736849c7afd249d24bd"]]
+  [1m[35mConversation Load (0.2ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mMessage Load (0.5ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ? AND (delivered_at < '2015-05-22 00:47:13.725334')[0m  [["conversation_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  Rendered shared/_user_box.json.jbuilder (0.2ms)
+  Rendered conversations/show.json.jbuilder (8.8ms)
+Completed 200 OK in 27ms (Views: 18.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/conversations/1?remember_token=fScZXy6Hnq-5Iic4tFgepA==" for 127.0.0.1 at 2015-05-22 03:47:38 +0300
+Processing by ConversationsController#show as */*
+  Parameters: {"remember_token"=>"fScZXy6Hnq-5Iic4tFgepA==", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ? LIMIT 1[0m  [["remember_token", "1f759dc2be4ed20b959275825eed4208e3a78d2e"]]
+  [1m[35mConversation Load (0.1ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ? AND (delivered_at < '2015-05-22 00:47:38.026769')[0m  [["conversation_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  Rendered shared/_user_box.json.jbuilder (0.1ms)
+  Rendered conversations/show.json.jbuilder (26.7ms)
+Completed 200 OK in 40ms (Views: 34.7ms | ActiveRecord: 0.9ms)

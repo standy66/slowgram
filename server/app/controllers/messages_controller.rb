@@ -16,7 +16,10 @@ class MessagesController < ApplicationController
   end
 
   def message_params
-    params.permit(:title, :body)
+    params[:sender_id] = sender.id
+    params[:recipient_id] = recipient.id
+    params[:delivered_at] = Time.now + 1.minute
+    params.permit(:title, :body, :delivered_at, :sender_id, :recipient_id)
   end
 
   def conversation

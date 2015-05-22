@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150505191149) do
+ActiveRecord::Schema.define(version: 20150521235946) do
 
   create_table "contact_relations", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -21,8 +21,10 @@ ActiveRecord::Schema.define(version: 20150505191149) do
   end
 
   create_table "conversations", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -31,6 +33,9 @@ ActiveRecord::Schema.define(version: 20150505191149) do
     t.integer  "conversation_id"
     t.string   "title"
     t.string   "body"
+    t.datetime "delivered_at"
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -39,14 +44,6 @@ ActiveRecord::Schema.define(version: 20150505191149) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.string   "remember_token"
-  end
-
-  create_table "users_to_conversations", force: :cascade do |t|
-    t.integer  "sender_id"
-    t.integer  "recipient_id"
-    t.integer  "conversation_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
   end
 
 end
